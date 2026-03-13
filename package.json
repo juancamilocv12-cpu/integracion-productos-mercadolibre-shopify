@@ -1,0 +1,24 @@
+{
+    "name": "shopify-mercadolibre-sync",
+    "version": "1.0.0",
+    "description": "Sync products and prices from Shopify to Mercado Libre",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "node src/index.js",
+        "sync:once": "node src/index.js --once",
+        "ml:token": "node scripts/get-ml-token.js",
+        "ml:refresh": "node scripts/get-ml-token.js --refresh"
+    },
+    "keywords": [
+        "shopify",
+        "mercadolibre",
+        "sync"
+    ],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "axios": "^1.8.4",
+        "dotenv": "^16.4.7",
+        "node-cron": "^3.0.3"
+    }
+}
