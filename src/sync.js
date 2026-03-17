@@ -1,4 +1,5 @@
 const logger = require("./logger");
+const config = require("./config");
 const { fetchVariantRows } = require("./shopify");
 const { getMappingBySku, saveMapping } = require("./store");
 const meli = require("./mercadolibre");
@@ -11,18 +12,33 @@ async function syncOnce() {
     logger.info("Starting Shopify -> Mercado Libre sync");
 
     const variants = await fetchVariantRows();
-    logger.info("Variants fetched from Shopify", { count: variants.length });
+    const variantsToProcess = config.sync.maxProductsPerRun > 0
+        ? variants.slice(0, config.sync.maxProductsPerRun)
+        : variants;
+
+    logger.info("Variants fetched from Shopify", {
+        total: variants.length,
+        toProcess: variantsToProcess.length
+    });
 
     let created = 0;
     let updated = 0;
     let skipped = 0;
     let failed = 0;
+    const seenSkus = new Set();
 
-    for (const variant of variants) {
+    for (const variant of variantsToProcess) {
         if (!variant.sku) {
             skipped += 1;
             continue;
         }
+
+        if (seenSkus.has(variant.sku)) {
+            skipped += 1;
+            continue;
+        }
+
+        seenSkus.add(variant.sku);
 
         if (!Number.isFinite(variant.price) || variant.price <= 0) {
             skipped += 1;
@@ -40,6 +56,11 @@ async function syncOnce() {
 
             if (itemId) {
                 const result = await meli.updateItem(itemId, variant);
+                if (result.skipped) {
+                    skipped += 1;
+                    continue;
+                }
+
                 updated += 1;
                 saveMapping(variant.sku, {
                     itemId: result.itemId,

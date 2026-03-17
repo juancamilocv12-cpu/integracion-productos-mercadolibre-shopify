@@ -24,6 +24,11 @@ function toNumber(name, fallback) {
     return value;
 }
 
+function toBoolean(name, fallback) {
+    const raw = optional(name, fallback ? "true" : "false").toLowerCase();
+    return ["1", "true", "yes", "y", "on"].includes(raw);
+}
+
 const config = {
     shopify: {
         store: required("SHOPIFY_STORE"),
@@ -40,14 +45,18 @@ const config = {
         userId: optional("MELI_USER_ID"),
         authBaseUrl: optional("MELI_AUTH_BASE_URL"),
         defaultCategoryId: optional("MELI_DEFAULT_CATEGORY_ID"),
-        listingTypeId: optional("MELI_LISTING_TYPE_ID", "gold_special")
+        listingTypeId: optional("MELI_LISTING_TYPE_ID", "gold_special"),
+        defaultImageUrl: optional("MELI_DEFAULT_IMAGE_URL")
     },
     sync: {
         markupPercent: toNumber("PRICE_MARKUP_PERCENT", 14),
+        minPrice: toNumber("MIN_PRICE", 0),
         defaultQuantity: toNumber("DEFAULT_QUANTITY", 1),
         intervalMinutes: toNumber("SYNC_INTERVAL_MINUTES", 5),
         currencyId: optional("CURRENCY_ID", "COP"),
-        timeoutMs: toNumber("REQUEST_TIMEOUT_MS", 30000)
+        timeoutMs: toNumber("REQUEST_TIMEOUT_MS", 30000),
+        updateTitle: toBoolean("MELI_UPDATE_TITLE", false),
+        maxProductsPerRun: toNumber("MAX_PRODUCTS_PER_RUN", 0)
     }
 };
 

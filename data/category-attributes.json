@@ -1,0 +1,59 @@
+{
+    "*": {
+        "BRAND": "{{vendor}}",
+        "MODEL": "{{title}}"
+    },
+    "MCO116389": {
+        "BRAND": "{{vendor}}",
+        "MODEL": "{{title}}",
+        "LENGTH": "70 cm",
+        "HEIGHT": "15 cm"
+    },
+    "MCO166146": {
+        "BRAND": "{{vendor}}",
+        "POT_TYPE": "Cacerola"
+    },
+    "MCO166346": {
+        "BRAND": "{{vendor}}",
+        "MODEL": "{{title}}",
+        "COLOR": "Blanco"
+    },
+    "MCO169165": {
+        "BRAND": "{{vendor}}",
+        "MODEL": "{{title}}"
+    },
+    "MCO411028": {
+        "BRAND": "{{vendor}}",
+        "MODEL": "Bata de baño",
+        "GENDER": "Sin género",
+        "COLOR": "Blanco",
+        "SIZE": "{{variantTitle}}",
+        "SIZE_GRID_ID": "1982549"
+    },
+    "MCO413485": {
+        "MANUFACTURER": "{{vendor}}",
+        "MODEL": "{{title}}"
+    },
+    "MCO413907": {
+        "BRAND": "{{vendor}}"
+    },
+    "MCO414140": {
+        "BRAND": "{{vendor}}",
+        "MODEL": "{{title}}",
+        "ORGANIZER_TYPE": "Horizontal"
+    },
+    "MCO417183": {
+        "BRAND": "{{vendor}}",
+        "MODEL": "{{title}}",
+        "COLOR": "Blanco",
+        "WIDTH": "40 cm",
+        "HEIGHT": "60 cm"
+    },
+    "MCO82315": {
+        "BRAND": "{{vendor}}",
+        "MODEL": "{{title}}"
+    },
+    "MCO164701": {
+        "BRAND": "{{vendor}}"
+    }
+}

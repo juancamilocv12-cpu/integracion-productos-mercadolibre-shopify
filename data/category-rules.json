@@ -1,0 +1,30 @@
+{
+    "exactSku": {
+        "2000002186663": "MCO413907"
+    },
+    "skuPrefix": {
+        "FURN_": "MCO414140",
+        "200002": "MCO166346"
+    },
+    "titleContains": {
+        "almohada": "MCO116389",
+        "agua de linos": "MCO413907",
+        "bata de bano": "MCO116389",
+        "bata de baño": "MCO116389",
+        "bandeja": "MCO414140",
+        "bolsa para ropa": "MCO417183",
+        "camino de mesa": "MCO413485",
+        "cajon": "MCO169165",
+        "cajón": "MCO169165",
+        "cobija": "MCO166346",
+        "coge ollas": "MCO166146",
+        "cojin": "MCO164701",
+        "cojín": "MCO164701",
+        "toalla": "MCO82315"
+    },
+    "productTypeContains": {
+        "toallas": "MCO82315"
+    },
+    "vendorContains": {},
+    "tagContains": {}
+}
