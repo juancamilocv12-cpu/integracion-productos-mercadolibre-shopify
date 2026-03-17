@@ -17,10 +17,20 @@ let refreshToken = config.meli.refreshToken;
 let userId = config.meli.userId;
 const requiredAttributesCache = new Map();
 
+function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 function computePrice(basePrice) {
     const multiplier = 1 + config.sync.markupPercent / 100;
     const calculated = Math.round(basePrice * multiplier * 100) / 100;
-    return Math.max(calculated, config.sync.minPrice);
+    const floorApplied = Math.max(calculated, config.sync.minPrice);
+
+    if (String(config.sync.currencyId || "").toUpperCase() === "COP") {
+        return Math.round(floorApplied);
+    }
+
+    return floorApplied;
 }
 
 function buildTitle(product) {
@@ -43,7 +53,7 @@ function buildFamilyName(product) {
         preferred = `${product.vendor || "Producto"} ${product.sku || ""}`.trim();
     }
 
-    return preferred.slice(0, 120);
+    return preferred.slice(0, 60);
 }
 
 function isTitleBlockedByFamilyName(error) {
@@ -106,6 +116,28 @@ function isItemNotModifiable(error) {
     return message.includes("under_review")
         || causeCodes.includes("field_not_updatable")
         || causeCodes.includes("item.price.not_modifiable");
+}
+
+function canRetryCreateWithDefaultCategory(error, discoveredCategoryId) {
+    if (!config.meli.defaultCategoryId || config.meli.defaultCategoryId === discoveredCategoryId) {
+        return false;
+    }
+
+    if (!error.response) {
+        return false;
+    }
+
+    const status = error.response.status;
+    const data = error.response.data || {};
+    const err = String(data.error || "").toLowerCase();
+    const message = String(data.message || "").toLowerCase();
+
+    return status === 400
+        || status === 404
+        || err.includes("validation_error")
+        || message.includes("validation")
+        || isAttributesRequired(error)
+        || isTitleInvalidForCreate(error);
 }
 
 async function postItem(payload) {
@@ -217,15 +249,38 @@ async function refreshAccessToken() {
     logger.warn("Mercado Libre access token refreshed. Update .env with new tokens if you restart the service.");
 }
 
-async function authorizedRequest(requestFn, hasRetried = false) {
+async function authorizedRequest(requestFn, options = {}) {
+    const {
+        hasRetried401 = false,
+        retry429 = 0
+    } = options;
+
     try {
         return await requestFn();
     } catch (error) {
         const status = error.response ? error.response.status : null;
-        if (status === 401 && !hasRetried) {
+        if (status === 401 && !hasRetried401) {
             await refreshAccessToken();
-            return authorizedRequest(requestFn, true);
+            return authorizedRequest(requestFn, {
+                hasRetried401: true,
+                retry429
+            });
         }
+
+        if (status === 429 && retry429 < 4) {
+            const waitMs = (retry429 + 1) * 2000;
+            logger.warn("Rate limit hit on Mercado Libre API. Retrying request.", {
+                retry: retry429 + 1,
+                waitMs
+            });
+            await sleep(waitMs);
+
+            return authorizedRequest(requestFn, {
+                hasRetried401,
+                retry429: retry429 + 1
+            });
+        }
+
         throw error;
     }
 }
@@ -262,6 +317,51 @@ async function searchItemBySku(sku) {
     return first || null;
 }
 
+async function getItem(itemId) {
+    const response = await authorizedRequest(() =>
+        apiClient.get(`/items/${itemId}`, {
+            headers: authHeaders()
+        })
+    );
+
+    return response.data;
+}
+
+function shouldRecreateListing(item) {
+    const status = String(item.status || "").toLowerCase();
+    const subStatus = Array.isArray(item.sub_status)
+        ? item.sub_status.map((value) => String(value).toLowerCase())
+        : [];
+
+    if (status === "closed" || status === "inactive") {
+        return true;
+    }
+
+    if (status === "under_review" && subStatus.includes("forbidden")) {
+        return true;
+    }
+
+    return false;
+}
+
+async function resolveUpdatableItemId(itemId) {
+    if (!itemId) {
+        return null;
+    }
+
+    const item = await getItem(itemId);
+    if (shouldRecreateListing(item)) {
+        logger.warn("Existing listing is blocked and will be recreated.", {
+            itemId,
+            status: item.status,
+            sub_status: item.sub_status || []
+        });
+        return null;
+    }
+
+    return itemId;
+}
+
 async function discoverCategory(product) {
     const mappedCategoryId = resolveCategoryFromRules(product);
     if (mappedCategoryId) {
@@ -281,6 +381,10 @@ async function discoverCategory(product) {
 
     const first = (response.data || [])[0];
     if (!first || !first.category_id) {
+        if (config.meli.defaultCategoryId) {
+            return config.meli.defaultCategoryId;
+        }
+
         throw new Error(`No category could be discovered for SKU ${product.sku}`);
     }
 
@@ -353,9 +457,7 @@ async function createItem(product) {
     try {
         response = await createWithCategory(categoryId);
     } catch (error) {
-        const shouldRetryWithDefaultCategory = isAttributesRequired(error)
-            && config.meli.defaultCategoryId
-            && config.meli.defaultCategoryId !== categoryId;
+        const shouldRetryWithDefaultCategory = canRetryCreateWithDefaultCategory(error, categoryId);
 
         if (!shouldRetryWithDefaultCategory) {
             if (isAttributesRequired(error) && !config.meli.defaultCategoryId) {
@@ -367,7 +469,7 @@ async function createItem(product) {
             throw error;
         }
 
-        logger.warn("Category requires attributes. Retrying create with MELI_DEFAULT_CATEGORY_ID.", {
+        logger.warn("Create failed in discovered category. Retrying with MELI_DEFAULT_CATEGORY_ID.", {
             sku: product.sku,
             discoveredCategoryId: categoryId,
             fallbackCategoryId: config.meli.defaultCategoryId
@@ -385,6 +487,24 @@ async function createItem(product) {
 }
 
 async function updateItem(itemId, product) {
+    if (config.sync.autoActivatePaused) {
+        const item = await getItem(itemId);
+        if (String(item.status || "").toLowerCase() === "paused") {
+            logger.warn("Paused listing detected. Attempting to reactivate.", {
+                itemId,
+                sku: product.sku
+            });
+
+            await authorizedRequest(() =>
+                apiClient.put(`/items/${itemId}`, {
+                    status: "active"
+                }, {
+                    headers: authHeaders()
+                })
+            );
+        }
+    }
+
     const basePayload = {
         price: computePrice(product.price),
         available_quantity: config.sync.defaultQuantity
@@ -444,5 +564,6 @@ module.exports = {
     computePrice,
     createItem,
     updateItem,
-    searchItemBySku
+    searchItemBySku,
+    resolveUpdatableItemId
 };

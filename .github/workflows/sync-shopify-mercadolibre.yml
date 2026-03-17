@@ -1,0 +1,78 @@
+name: Shopify to Mercado Libre Sync
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: shopify-mercadolibre-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      SHOPIFY_STORE: ${{ secrets.SHOPIFY_STORE }}
+      SHOPIFY_ACCESS_TOKEN: ${{ secrets.SHOPIFY_ACCESS_TOKEN }}
+      SHOPIFY_API_VERSION: 2025-01
+
+      MELI_SITE_ID: MCO
+      MELI_APP_ID: ${{ secrets.MELI_APP_ID }}
+      MELI_CLIENT_SECRET: ${{ secrets.MELI_CLIENT_SECRET }}
+      MELI_REDIRECT_URI: ${{ secrets.MELI_REDIRECT_URI }}
+      MELI_ACCESS_TOKEN: ${{ secrets.MELI_ACCESS_TOKEN }}
+      MELI_REFRESH_TOKEN: ${{ secrets.MELI_REFRESH_TOKEN }}
+      MELI_USER_ID: ${{ secrets.MELI_USER_ID }}
+      MELI_AUTH_BASE_URL: https://auth.mercadolibre.com.co
+      MELI_DEFAULT_CATEGORY_ID: ${{ secrets.MELI_DEFAULT_CATEGORY_ID }}
+      MELI_LISTING_TYPE_ID: gold_special
+      MELI_DEFAULT_IMAGE_URL: ${{ secrets.MELI_DEFAULT_IMAGE_URL }}
+
+      PRICE_MARKUP_PERCENT: 14
+      MIN_PRICE: 2900
+      DEFAULT_QUANTITY: 1
+      CURRENCY_ID: COP
+      REQUEST_TIMEOUT_MS: 30000
+      REQUEST_DELAY_MS: 350
+      MELI_AUTO_ACTIVATE_PAUSED: true
+      MELI_UPDATE_TITLE: false
+      MAX_PRODUCTS_PER_RUN: 0
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run synchronization
+        run: npm run sync:once
+
+      - name: Commit mapping updates
+        run: |
+          if [ -f data/sku-map.json ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/sku-map.json
+            if ! git diff --cached --quiet; then
+              git commit -m "chore: update sku map [skip ci]"
+              git push
+            else
+              echo "No mapping changes to commit"
+            fi
+          else
+            echo "sku-map.json not found"
+          fi

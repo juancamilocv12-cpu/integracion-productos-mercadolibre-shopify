@@ -18,6 +18,22 @@
         "MODEL": "{{title}}",
         "COLOR": "Blanco"
     },
+    "MCO166344": {
+        "BRAND": "{{vendor}}",
+        "MODEL": "{{title}}",
+        "SHEET_PRESENTATION": "Juego de sábanas",
+        "MATTRESS_SIZE": "Doble"
+    },
+    "MCO166348": {
+        "BRAND": "{{vendor}}",
+        "MODEL": "{{title}}",
+        "COMFORTER_MATTRESS_SIZE": "Doble"
+    },
+    "MCO166345": {
+        "BRAND": "{{vendor}}",
+        "MODEL": "{{title}}",
+        "MATTRESS_SIZE": "Doble"
+    },
     "MCO169165": {
         "BRAND": "{{vendor}}",
         "MODEL": "{{title}}"

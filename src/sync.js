@@ -55,9 +55,19 @@ async function syncOnce() {
             }
 
             if (itemId) {
+                itemId = await meli.resolveUpdatableItemId(itemId);
+            }
+
+            if (itemId) {
                 const result = await meli.updateItem(itemId, variant);
                 if (result.skipped) {
                     skipped += 1;
+                    saveMapping(variant.sku, {
+                        itemId: result.itemId,
+                        shopifyVariantId: variant.shopifyVariantId,
+                        shopifyProductId: variant.shopifyProductId,
+                        lastSyncedPrice: result.price
+                    });
                     continue;
                 }
 
@@ -79,7 +89,7 @@ async function syncOnce() {
                 });
             }
 
-            await sleep(150);
+            await sleep(config.sync.requestDelayMs);
         } catch (error) {
             failed += 1;
             const details = error.response && error.response.data ? error.response.data : { message: error.message };

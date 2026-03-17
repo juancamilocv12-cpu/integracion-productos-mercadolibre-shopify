@@ -49,6 +49,29 @@ npm run sync:once
 npm start
 ```
 
+## 5) Run automatically in GitHub Actions
+
+Workflow file:
+- `.github/workflows/sync-shopify-mercadolibre.yml`
+
+Required repository secrets:
+- `SHOPIFY_STORE`
+- `SHOPIFY_ACCESS_TOKEN`
+- `MELI_APP_ID`
+- `MELI_CLIENT_SECRET`
+- `MELI_REDIRECT_URI`
+- `MELI_ACCESS_TOKEN`
+- `MELI_REFRESH_TOKEN`
+- `MELI_USER_ID`
+- Optional: `MELI_DEFAULT_CATEGORY_ID`
+- Optional: `MELI_DEFAULT_IMAGE_URL`
+
+The workflow:
+- Runs every 5 minutes.
+- Runs one full sync.
+- Automatically tries to reactivate paused listings.
+- Commits `data/sku-map.json` changes back to the repository.
+
 ## Notes
 
 - If Mercado Libre token expires during execution, the app auto-refreshes it in memory and prints the new pair in logs.
