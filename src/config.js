@@ -50,15 +50,12 @@ const config = {
         apiVersion: optional("SHOPIFY_API_VERSION", "2025-01"),
         locationId: optionalNumber("SHOPIFY_LOCATION_ID")
     },
-    postgres: {
-        connectionString: optional("POSTGRES_CONNECTION_STRING"),
-        branchId: optional("POSTGRES_BRANCH_ID"),
-        stockQuery: optional(
-            "POSTGRES_STOCK_QUERY",
-            "SELECT sku, quantity FROM inventory"
-        ),
-        ssl: toBoolean("POSTGRES_SSL", true),
-        sslRejectUnauthorized: toBoolean("POSTGRES_SSL_REJECT_UNAUTHORIZED", false)
+    odoo: {
+        url: optional("ODOO_URL"),
+        db: optional("ODOO_DB"),
+        username: optional("ODOO_USERNAME"),
+        apiKey: optional("ODOO_API_KEY"),
+        warehouseName: optional("ODOO_WAREHOUSE_NAME")
     },
     meli: {
         siteId: optional("MELI_SITE_ID", "MCO"),
@@ -86,13 +83,13 @@ const config = {
         maxProductsPerRun: toNumber("MAX_PRODUCTS_PER_RUN", 0)
     },
     stock: {
-        source: optional("STOCK_SOURCE", "postgres").toLowerCase(),
+        source: optional("STOCK_SOURCE", "odoo").toLowerCase(),
         defaultWhenMissing: toNumber("STOCK_DEFAULT_WHEN_MISSING", 0)
     }
 };
 
-if (!["postgres", "fixed"].includes(config.stock.source)) {
-    throw new Error("STOCK_SOURCE must be one of: postgres, fixed");
+if (!["odoo", "fixed"].includes(config.stock.source)) {
+    throw new Error("STOCK_SOURCE must be one of: odoo, fixed");
 }
 
 module.exports = config;

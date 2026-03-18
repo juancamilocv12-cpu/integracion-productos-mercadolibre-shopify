@@ -6,34 +6,34 @@ Business rules already configured:
 - Create and update listings.
 - SKU mapping (Shopify variant SKU <-> Mercado Libre item).
 - Price = Shopify price + 14%.
-- Stock source = PostgreSQL by SKU.
-- Inventory flow = PostgreSQL -> Shopify -> Mercado Libre.
+- Stock source = Odoo POS (tienda Bucaramanga #1).
+- Inventory flow = Odoo POS -> Shopify -> Mercado Libre.
 - Frequency = every 5 minutes.
 - Listing type = premium (`gold_special`).
 - Condition = new.
 - Warranty = seller warranty, 30 days.
 
-## 0) Configure stock source (PostgreSQL)
+## 0) Configure stock source (Odoo POS)
 
 Required `.env` variables:
 
 ```bash
-STOCK_SOURCE=postgres
-POSTGRES_CONNECTION_STRING=postgres://user:password@host:5432/database
-POSTGRES_STOCK_QUERY=SELECT sku, quantity FROM inventory WHERE branch_id = $1
-POSTGRES_BRANCH_ID=MAIN_BOGOTA
-POSTGRES_SSL=true
-POSTGRES_SSL_REJECT_UNAUTHORIZED=false
+STOCK_SOURCE=odoo
+ODOO_URL=http://serverodoo.grupooba.co:8069
+ODOO_DB=geobamain15450421
+ODOO_USERNAME=tiendabogota1@comertex.com.co
+ODOO_API_KEY=your_odoo_api_key
+ODOO_WAREHOUSE_NAME=COMERTEX BUCARAMANGA # 1
 STOCK_DEFAULT_WHEN_MISSING=0
 SHOPIFY_LOCATION_ID=
 ```
 
 Notes:
-- Your SQL query must return columns named exactly `sku` and `quantity`.
-- To filter one specific branch/sucursal, keep `$1` in `POSTGRES_STOCK_QUERY` and set `POSTGRES_BRANCH_ID`.
-- If your query does not use `$1`, `POSTGRES_BRANCH_ID` is ignored.
+- `ODOO_WAREHOUSE_NAME` must match the warehouse name in Odoo exactly (case-insensitive search).
+- Stock is read from `product.product.qty_available` filtered to the specified warehouse.
+- Products without an internal reference (`default_code`) in Odoo are skipped.
+- If a SKU exists in Shopify but not in Odoo results, `STOCK_DEFAULT_WHEN_MISSING=0` applies.
 - `SHOPIFY_LOCATION_ID` is optional. If empty, the first active Shopify location is used.
-- If a SKU is missing in PostgreSQL, the sync uses `STOCK_DEFAULT_WHEN_MISSING`.
 
 ## 1) Install dependencies
 
@@ -81,9 +81,11 @@ Required repository secrets:
 - `SHOPIFY_STORE`
 - `SHOPIFY_ACCESS_TOKEN`
 - `SHOPIFY_LOCATION_ID` (optional)
-- `POSTGRES_CONNECTION_STRING`
-- `POSTGRES_STOCK_QUERY` (optional, but recommended if your table/query differs)
-- `POSTGRES_BRANCH_ID` (optional, required only if your query uses `$1`)
+- `ODOO_URL`
+- `ODOO_DB`
+- `ODOO_USERNAME`
+- `ODOO_API_KEY`
+- `ODOO_WAREHOUSE_NAME`
 - `MELI_APP_ID`
 - `MELI_CLIENT_SECRET`
 - `MELI_REDIRECT_URI`

@@ -1,7 +1,7 @@
 const logger = require("./logger");
 const config = require("./config");
 const { fetchVariantRows, setInventoryLevel } = require("./shopify");
-const { fetchStockBySku } = require("./postgresStock");
+const { fetchStockBySku } = require("./odooStock");
 const { getMappingBySku, saveMapping } = require("./store");
 const meli = require("./mercadolibre");
 
@@ -55,14 +55,14 @@ async function syncOnce() {
             ? stockBySku.get(variant.sku)
             : config.stock.defaultWhenMissing;
 
-        if (!stockBySku.has(variant.sku) && config.stock.source === "postgres") {
+        if (!stockBySku.has(variant.sku) && config.stock.source === "odoo") {
             inventoryMissingSku += 1;
         }
 
         const availableQuantity = Math.max(0, Math.floor(Number(stockValue)));
         variant.availableQuantity = availableQuantity;
 
-        if (config.stock.source === "postgres") {
+        if (config.stock.source === "odoo") {
             if (!variant.inventoryItemId && variant.inventoryItemId !== 0) {
                 inventoryMissingItem += 1;
                 logger.warn("Skipped Shopify inventory update because inventory_item_id is missing", {
