@@ -33,6 +33,14 @@ function computePrice(basePrice) {
     return floorApplied;
 }
 
+function resolveAvailableQuantity(product) {
+    if (Number.isFinite(product.availableQuantity)) {
+        return Math.max(0, Math.floor(product.availableQuantity));
+    }
+
+    return Math.max(0, Math.floor(config.sync.defaultQuantity));
+}
+
 function buildTitle(product) {
     const suffix = product.optionValues && product.optionValues.length
         ? ` - ${product.optionValues.join(" / ")}`
@@ -412,7 +420,7 @@ async function createItem(product) {
             category_id: targetCategoryId,
             price: computePrice(product.price),
             currency_id: config.sync.currencyId,
-            available_quantity: config.sync.defaultQuantity,
+            available_quantity: resolveAvailableQuantity(product),
             buying_mode: "buy_it_now",
             listing_type_id: config.meli.listingTypeId,
             condition: "new",
@@ -507,7 +515,7 @@ async function updateItem(itemId, product) {
 
     const basePayload = {
         price: computePrice(product.price),
-        available_quantity: config.sync.defaultQuantity
+        available_quantity: resolveAvailableQuantity(product)
     };
 
     const payload = {

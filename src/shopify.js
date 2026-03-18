@@ -1,5 +1,6 @@
 const axios = require("axios");
 const config = require("./config");
+const logger = require("./logger");
 
 const client = axios.create({
     baseURL: `https://${config.shopify.store}/admin/api/${config.shopify.apiVersion}`,
@@ -9,6 +10,8 @@ const client = axios.create({
         "Content-Type": "application/json"
     }
 });
+
+let cachedLocationId = null;
 
 function extractNextPageInfo(linkHeader) {
     if (!linkHeader) {
@@ -52,6 +55,7 @@ function parseVariantRows(products) {
             rows.push({
                 shopifyProductId: product.id,
                 shopifyVariantId: variant.id,
+                inventoryItemId: variant.inventory_item_id,
                 sku,
                 title: product.title,
                 variantTitle: variant.title,
@@ -92,6 +96,51 @@ async function fetchVariantRows() {
     return parseVariantRows(allProducts);
 }
 
+async function resolveLocationId() {
+    if (config.shopify.locationId) {
+        return config.shopify.locationId;
+    }
+
+    if (cachedLocationId) {
+        return cachedLocationId;
+    }
+
+    const response = await client.get("/locations.json", {
+        params: {
+            limit: 250
+        }
+    });
+
+    const locations = response.data.locations || [];
+    const activeLocation = locations.find((location) => location.active !== false) || locations[0];
+
+    if (!activeLocation || !activeLocation.id) {
+        throw new Error("No Shopify location available for inventory sync");
+    }
+
+    cachedLocationId = Number(activeLocation.id);
+    logger.info("Shopify inventory location resolved", {
+        locationId: cachedLocationId,
+        locationName: activeLocation.name || ""
+    });
+
+    return cachedLocationId;
+}
+
+async function setInventoryLevel(inventoryItemId, availableQuantity) {
+    if (!inventoryItemId && inventoryItemId !== 0) {
+        throw new Error("Missing inventoryItemId for Shopify inventory update");
+    }
+
+    const locationId = await resolveLocationId();
+    await client.post("/inventory_levels/set.json", {
+        location_id: Number(locationId),
+        inventory_item_id: Number(inventoryItemId),
+        available: Number(availableQuantity)
+    });
+}
+
 module.exports = {
-    fetchVariantRows
+    fetchVariantRows,
+    setInventoryLevel
 };

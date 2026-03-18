@@ -1,6 +1,7 @@
 const logger = require("./logger");
 const config = require("./config");
-const { fetchVariantRows } = require("./shopify");
+const { fetchVariantRows, setInventoryLevel } = require("./shopify");
+const { fetchStockBySku } = require("./postgresStock");
 const { getMappingBySku, saveMapping } = require("./store");
 const meli = require("./mercadolibre");
 
@@ -12,6 +13,7 @@ async function syncOnce() {
     logger.info("Starting Shopify -> Mercado Libre sync");
 
     const variants = await fetchVariantRows();
+    const stockBySku = await fetchStockBySku();
     const variantsToProcess = config.sync.maxProductsPerRun > 0
         ? variants.slice(0, config.sync.maxProductsPerRun)
         : variants;
@@ -25,6 +27,9 @@ async function syncOnce() {
     let updated = 0;
     let skipped = 0;
     let failed = 0;
+    let inventorySynced = 0;
+    let inventoryMissingSku = 0;
+    let inventoryMissingItem = 0;
     const seenSkus = new Set();
 
     for (const variant of variantsToProcess) {
@@ -44,6 +49,30 @@ async function syncOnce() {
             skipped += 1;
             logger.warn("Skipped SKU due invalid price", { sku: variant.sku, price: variant.price });
             continue;
+        }
+
+        const stockValue = stockBySku.has(variant.sku)
+            ? stockBySku.get(variant.sku)
+            : config.stock.defaultWhenMissing;
+
+        if (!stockBySku.has(variant.sku) && config.stock.source === "postgres") {
+            inventoryMissingSku += 1;
+        }
+
+        const availableQuantity = Math.max(0, Math.floor(Number(stockValue)));
+        variant.availableQuantity = availableQuantity;
+
+        if (config.stock.source === "postgres") {
+            if (!variant.inventoryItemId && variant.inventoryItemId !== 0) {
+                inventoryMissingItem += 1;
+                logger.warn("Skipped Shopify inventory update because inventory_item_id is missing", {
+                    sku: variant.sku,
+                    shopifyVariantId: variant.shopifyVariantId
+                });
+            } else {
+                await setInventoryLevel(variant.inventoryItemId, availableQuantity);
+                inventorySynced += 1;
+            }
         }
 
         try {
@@ -104,14 +133,20 @@ async function syncOnce() {
         created,
         updated,
         skipped,
-        failed
+        failed,
+        inventorySynced,
+        inventoryMissingSku,
+        inventoryMissingItem
     });
 
     return {
         created,
         updated,
         skipped,
-        failed
+        failed,
+        inventorySynced,
+        inventoryMissingSku,
+        inventoryMissingItem
     };
 }
 
