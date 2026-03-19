@@ -1,6 +1,6 @@
 # Shopify -> Mercado Libre Sync
 
-Sync products, prices, and stock from Shopify/PostgreSQL to Mercado Libre.
+Sync products, prices, and stock from Shopify/Odoo POS to Mercado Libre.
 
 Business rules already configured:
 - Create and update listings.
@@ -97,7 +97,7 @@ Required repository secrets:
 
 The workflow:
 - Runs every 5 minutes.
-- Runs one full sync (loads stock from PostgreSQL, updates Shopify inventory, then updates Mercado Libre).
+- Runs one full sync (loads stock from Odoo POS, updates Shopify inventory, then updates Mercado Libre).
 - Automatically tries to reactivate paused listings.
 - Commits `data/sku-map.json` changes back to the repository.
 
