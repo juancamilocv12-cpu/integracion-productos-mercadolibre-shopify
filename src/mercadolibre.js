@@ -335,6 +335,16 @@ async function getItem(itemId) {
     return response.data;
 }
 
+async function getItemStatus(itemId) {
+    const item = await getItem(itemId);
+    const status = String(item.status || "").toLowerCase();
+    return {
+        status,
+        raw: item,
+        isActive: status === "active"
+    };
+}
+
 function shouldRecreateListing(item) {
     const status = String(item.status || "").toLowerCase();
     const subStatus = Array.isArray(item.sub_status)
@@ -672,6 +682,7 @@ module.exports = {
     cleanupNonApprovedMappedItems,
     computePrice,
     createItem,
+    getItemStatus,
     updateItem,
     setItemQuantity,
     searchItemBySku,

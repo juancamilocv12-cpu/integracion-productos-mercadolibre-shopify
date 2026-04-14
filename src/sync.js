@@ -80,6 +80,7 @@ async function syncOnce() {
     let inventorySynced = 0;
     let inventoryMissingSku = 0;
     let inventoryMissingItem = 0;
+    let stockOnlyUpdated = 0;
     const touchedItemIds = new Set();
     const seenSkus = new Set();
 
@@ -141,6 +142,22 @@ async function syncOnce() {
             }
 
             if (itemId) {
+                const itemStatus = await meli.getItemStatus(itemId);
+                if (itemStatus.isActive) {
+                    await meli.setItemQuantity(itemId, availableQuantity);
+                    touchedItemIds.add(String(itemId));
+                    stockOnlyUpdated += 1;
+
+                    saveMapping(variant.sku, {
+                        itemId: String(itemId),
+                        shopifyVariantId: variant.shopifyVariantId,
+                        shopifyProductId: variant.shopifyProductId
+                    });
+
+                    await sleep(config.sync.requestDelayMs);
+                    continue;
+                }
+
                 itemId = await meli.resolveUpdatableItemId(itemId);
             }
 
@@ -201,6 +218,7 @@ async function syncOnce() {
         inventorySynced,
         inventoryMissingSku,
         inventoryMissingItem,
+        stockOnlyUpdated,
         nonApprovedReviewed: cleanupStats.reviewed,
         nonApprovedClosed: cleanupStats.closed,
         nonApprovedCleanupFailed: cleanupStats.failed,
@@ -217,6 +235,7 @@ async function syncOnce() {
         inventorySynced,
         inventoryMissingSku,
         inventoryMissingItem,
+        stockOnlyUpdated,
         nonApprovedReviewed: cleanupStats.reviewed,
         nonApprovedClosed: cleanupStats.closed,
         nonApprovedCleanupFailed: cleanupStats.failed,
