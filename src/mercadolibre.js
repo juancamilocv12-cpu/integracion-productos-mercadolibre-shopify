@@ -309,20 +309,26 @@ async function resolveUserId() {
     return userId;
 }
 
-async function searchItemBySku(sku) {
+async function searchItemBySku(sku, options = {}) {
+    const { status } = options;
     const sellerId = await resolveUserId();
     const response = await authorizedRequest(() =>
         apiClient.get(`/users/${sellerId}/items/search`, {
             headers: authHeaders(),
             params: {
                 seller_sku: sku,
-                limit: 1
+                limit: 1,
+                ...(status ? { status } : {})
             }
         })
     );
 
     const first = (response.data.results || [])[0];
     return first || null;
+}
+
+async function searchActiveItemBySku(sku) {
+    return searchItemBySku(sku, { status: "active" });
 }
 
 async function getItem(itemId) {
@@ -683,6 +689,7 @@ module.exports = {
     computePrice,
     createItem,
     getItemStatus,
+    searchActiveItemBySku,
     updateItem,
     setItemQuantity,
     searchItemBySku,

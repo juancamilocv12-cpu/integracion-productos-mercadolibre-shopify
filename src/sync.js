@@ -13,6 +13,36 @@ function normalizeSku(value) {
     return String(value || "").trim().toUpperCase();
 }
 
+async function resolveActiveItemIdBySku(variantSku, normalizedSku) {
+    const candidates = [variantSku, normalizedSku]
+        .map((value) => String(value || "").trim())
+        .filter(Boolean);
+
+    for (const skuCandidate of candidates) {
+        const activeId = await meli.searchActiveItemBySku(skuCandidate);
+        if (activeId) {
+            return String(activeId);
+        }
+    }
+
+    return null;
+}
+
+async function resolveAnyItemIdBySku(variantSku, normalizedSku) {
+    const candidates = [variantSku, normalizedSku]
+        .map((value) => String(value || "").trim())
+        .filter(Boolean);
+
+    for (const skuCandidate of candidates) {
+        const itemId = await meli.searchItemBySku(skuCandidate);
+        if (itemId) {
+            return String(itemId);
+        }
+    }
+
+    return null;
+}
+
 async function forceZeroStockForSkusMissingInOdoo(stockBySku, skipItemIds = new Set()) {
     const mappingsBySku = getAllMappings();
     let reviewed = 0;
@@ -135,10 +165,10 @@ async function syncOnce() {
 
         try {
             const existingMapping = getMappingBySku(variant.sku);
-            let itemId = existingMapping ? existingMapping.itemId : null;
+            let itemId = existingMapping ? String(existingMapping.itemId || "") : null;
 
             if (!itemId) {
-                itemId = await meli.searchItemBySku(variant.sku);
+                itemId = await resolveActiveItemIdBySku(variant.sku, normalizedSku);
             }
 
             if (itemId) {
@@ -159,6 +189,28 @@ async function syncOnce() {
                 }
 
                 itemId = await meli.resolveUpdatableItemId(itemId);
+            }
+
+            if (!itemId) {
+                itemId = await resolveActiveItemIdBySku(variant.sku, normalizedSku);
+                if (itemId) {
+                    await meli.setItemQuantity(itemId, availableQuantity);
+                    touchedItemIds.add(String(itemId));
+                    stockOnlyUpdated += 1;
+
+                    saveMapping(variant.sku, {
+                        itemId: String(itemId),
+                        shopifyVariantId: variant.shopifyVariantId,
+                        shopifyProductId: variant.shopifyProductId
+                    });
+
+                    await sleep(config.sync.requestDelayMs);
+                    continue;
+                }
+            }
+
+            if (!itemId) {
+                itemId = await resolveAnyItemIdBySku(variant.sku, normalizedSku);
             }
 
             if (itemId) {
