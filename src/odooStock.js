@@ -4,6 +4,10 @@ const logger = require("./logger");
 
 const BATCH_SIZE = 500;
 
+function normalizeSku(value) {
+    return String(value || "").trim().toUpperCase();
+}
+
 async function rpcCall(service, method, args) {
     const response = await axios.post(
         `${config.odoo.url}/jsonrpc`,
@@ -63,17 +67,38 @@ async function resolveWarehouseId(uid) {
         return null;
     }
 
-    const ids = await executeKw(uid, "stock.warehouse", "search", [
-        [["name", "ilike", config.odoo.warehouseName]]
-    ]);
+    const warehouses = await executeKw(
+        uid,
+        "stock.warehouse",
+        "search_read",
+        [[["name", "ilike", config.odoo.warehouseName]]],
+        { fields: ["id", "name"] }
+    );
 
-    if (!ids || ids.length === 0) {
+    if (!warehouses || warehouses.length === 0) {
         throw new Error(
             `Odoo warehouse not found: "${config.odoo.warehouseName}". Verify ODOO_WAREHOUSE_NAME.`
         );
     }
 
-    return ids[0];
+    const targetName = String(config.odoo.warehouseName || "").trim().toLowerCase();
+    const exactMatch = warehouses.find((warehouse) =>
+        String(warehouse.name || "").trim().toLowerCase() === targetName
+    );
+
+    if (exactMatch) {
+        return exactMatch.id;
+    }
+
+    if (warehouses.length === 1) {
+        return warehouses[0].id;
+    }
+
+    throw new Error(
+        `Multiple Odoo warehouses matched "${config.odoo.warehouseName}": ${warehouses
+            .map((warehouse) => `"${warehouse.name}"`)
+            .join(", ")}. Use the exact warehouse name in ODOO_WAREHOUSE_NAME.`
+    );
 }
 
 async function fetchAllProducts(uid, warehouseId) {
@@ -130,9 +155,9 @@ async function fetchStockBySku() {
     let skippedNoCode = 0;
 
     for (const product of products) {
-        const sku = String(product.default_code || "").trim();
+        const sku = normalizeSku(product.default_code);
 
-        if (!sku || sku === "false") {
+        if (!sku || sku === "FALSE") {
             skippedNoCode += 1;
             continue;
         }

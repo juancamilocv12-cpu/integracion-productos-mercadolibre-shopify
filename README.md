@@ -8,7 +8,7 @@ Business rules already configured:
 - Price = Shopify price + 14%.
 - Stock source = Odoo POS (tienda Bucaramanga #1).
 - Inventory flow = Odoo POS -> Shopify -> Mercado Libre.
-- Frequency = every 5 minutes.
+- Frequency = every 30 minutes.
 - Listing type = premium (`gold_special`).
 - Condition = new.
 - Warranty = seller warranty, 30 days.
@@ -23,7 +23,7 @@ ODOO_URL=http://serverodoo.grupooba.co:8069
 ODOO_DB=geobamain15450421
 ODOO_USERNAME=tiendabogota1@comertex.com.co
 ODOO_API_KEY=your_odoo_api_key
-ODOO_WAREHOUSE_NAME=COMERTEX BUCARAMANGA # 1
+ODOO_WAREHOUSE_NAME="COMERTEX BUCARAMANGA # 1"
 STOCK_DEFAULT_WHEN_MISSING=0
 SHOPIFY_LOCATION_ID=
 ```
@@ -66,7 +66,7 @@ Copy output values into `.env`:
 npm run sync:once
 ```
 
-## 4) Run scheduler (every 5 minutes)
+## 4) Run scheduler (every 30 minutes)
 
 ```bash
 npm start
@@ -96,7 +96,7 @@ Required repository secrets:
 - Optional: `MELI_DEFAULT_IMAGE_URL`
 
 The workflow:
-- Runs every 5 minutes.
+- Runs every 30 minutes.
 - Runs one full sync (loads stock from Odoo POS, updates Shopify inventory, then updates Mercado Libre).
 - Automatically tries to reactivate paused listings.
 - Commits `data/sku-map.json` changes back to the repository.

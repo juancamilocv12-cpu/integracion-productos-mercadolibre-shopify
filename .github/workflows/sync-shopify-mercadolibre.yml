@@ -2,7 +2,7 @@ name: Shopify to Mercado Libre Sync
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -51,6 +51,7 @@ jobs:
       MELI_AUTO_ACTIVATE_PAUSED: true
       MELI_UPDATE_TITLE: false
       MAX_PRODUCTS_PER_RUN: 0
+      SYNC_INTERVAL_MINUTES: 30
 
     steps:
       - name: Checkout repository

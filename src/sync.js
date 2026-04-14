@@ -9,6 +9,10 @@ function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+function normalizeSku(value) {
+    return String(value || "").trim().toUpperCase();
+}
+
 async function syncOnce() {
     logger.info("Starting Shopify -> Mercado Libre sync");
 
@@ -38,12 +42,18 @@ async function syncOnce() {
             continue;
         }
 
-        if (seenSkus.has(variant.sku)) {
+        const normalizedSku = normalizeSku(variant.sku);
+        if (!normalizedSku) {
             skipped += 1;
             continue;
         }
 
-        seenSkus.add(variant.sku);
+        if (seenSkus.has(normalizedSku)) {
+            skipped += 1;
+            continue;
+        }
+
+        seenSkus.add(normalizedSku);
 
         if (!Number.isFinite(variant.price) || variant.price <= 0) {
             skipped += 1;
@@ -51,11 +61,11 @@ async function syncOnce() {
             continue;
         }
 
-        const stockValue = stockBySku.has(variant.sku)
-            ? stockBySku.get(variant.sku)
+        const stockValue = stockBySku.has(normalizedSku)
+            ? stockBySku.get(normalizedSku)
             : config.stock.defaultWhenMissing;
 
-        if (!stockBySku.has(variant.sku) && config.stock.source === "odoo") {
+        if (!stockBySku.has(normalizedSku) && config.stock.source === "odoo") {
             inventoryMissingSku += 1;
         }
 

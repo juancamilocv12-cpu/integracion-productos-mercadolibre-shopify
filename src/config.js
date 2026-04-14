@@ -74,7 +74,7 @@ const config = {
         markupPercent: toNumber("PRICE_MARKUP_PERCENT", 14),
         minPrice: toNumber("MIN_PRICE", 0),
         defaultQuantity: toNumber("DEFAULT_QUANTITY", 1),
-        intervalMinutes: toNumber("SYNC_INTERVAL_MINUTES", 5),
+        intervalMinutes: toNumber("SYNC_INTERVAL_MINUTES", 30),
         currencyId: optional("CURRENCY_ID", "COP"),
         timeoutMs: toNumber("REQUEST_TIMEOUT_MS", 30000),
         requestDelayMs: toNumber("REQUEST_DELAY_MS", 350),
