@@ -2,7 +2,7 @@ const logger = require("./logger");
 const config = require("./config");
 const { fetchVariantRows, setInventoryLevel } = require("./shopify");
 const { fetchStockBySku } = require("./odooStock");
-const { getMappingBySku, saveMapping } = require("./store");
+const { getAllMappings, getMappingBySku, saveMapping } = require("./store");
 const meli = require("./mercadolibre");
 
 function sleep(ms) {
@@ -13,8 +13,54 @@ function normalizeSku(value) {
     return String(value || "").trim().toUpperCase();
 }
 
+async function forceZeroStockForSkusMissingInOdoo(stockBySku, skipItemIds = new Set()) {
+    const mappingsBySku = getAllMappings();
+    let reviewed = 0;
+    let forcedToZero = 0;
+    let failed = 0;
+
+    for (const [sku, mapping] of Object.entries(mappingsBySku)) {
+        if (!mapping || !mapping.itemId) {
+            continue;
+        }
+
+        const itemId = String(mapping.itemId);
+        if (skipItemIds.has(itemId)) {
+            continue;
+        }
+
+        reviewed += 1;
+        const normalizedSku = normalizeSku(sku);
+        if (stockBySku.has(normalizedSku)) {
+            continue;
+        }
+
+        try {
+            await meli.setItemQuantity(itemId, 0);
+            forcedToZero += 1;
+        } catch (error) {
+            failed += 1;
+            const details = error.response && error.response.data ? error.response.data : { message: error.message };
+            logger.error("Failed forcing Mercado Libre stock to zero for missing Odoo SKU", {
+                sku,
+                itemId,
+                details
+            });
+        }
+    }
+
+    return {
+        reviewed,
+        forcedToZero,
+        failed
+    };
+}
+
 async function syncOnce() {
     logger.info("Starting Shopify -> Mercado Libre sync");
+
+    const cleanupStats = await meli.cleanupNonApprovedMappedItems(getAllMappings());
+    const closedItemIds = new Set((cleanupStats.closedItemIds || []).map((itemId) => String(itemId)));
 
     const variants = await fetchVariantRows();
     const stockBySku = await fetchStockBySku();
@@ -34,6 +80,7 @@ async function syncOnce() {
     let inventorySynced = 0;
     let inventoryMissingSku = 0;
     let inventoryMissingItem = 0;
+    const touchedItemIds = new Set();
     const seenSkus = new Set();
 
     for (const variant of variantsToProcess) {
@@ -99,6 +146,7 @@ async function syncOnce() {
 
             if (itemId) {
                 const result = await meli.updateItem(itemId, variant);
+                touchedItemIds.add(String(result.itemId));
                 if (result.skipped) {
                     skipped += 1;
                     saveMapping(variant.sku, {
@@ -119,6 +167,7 @@ async function syncOnce() {
                 });
             } else {
                 const result = await meli.createItem(variant);
+                touchedItemIds.add(String(result.itemId));
                 created += 1;
                 saveMapping(variant.sku, {
                     itemId: result.itemId,
@@ -139,6 +188,11 @@ async function syncOnce() {
         }
     }
 
+    const zeroOutStats = await forceZeroStockForSkusMissingInOdoo(stockBySku, new Set([
+        ...closedItemIds,
+        ...touchedItemIds
+    ]));
+
     logger.info("Sync finished", {
         created,
         updated,
@@ -146,7 +200,13 @@ async function syncOnce() {
         failed,
         inventorySynced,
         inventoryMissingSku,
-        inventoryMissingItem
+        inventoryMissingItem,
+        nonApprovedReviewed: cleanupStats.reviewed,
+        nonApprovedClosed: cleanupStats.closed,
+        nonApprovedCleanupFailed: cleanupStats.failed,
+        zeroOutReviewed: zeroOutStats.reviewed,
+        zeroOutApplied: zeroOutStats.forcedToZero,
+        zeroOutFailed: zeroOutStats.failed
     });
 
     return {
@@ -156,7 +216,13 @@ async function syncOnce() {
         failed,
         inventorySynced,
         inventoryMissingSku,
-        inventoryMissingItem
+        inventoryMissingItem,
+        nonApprovedReviewed: cleanupStats.reviewed,
+        nonApprovedClosed: cleanupStats.closed,
+        nonApprovedCleanupFailed: cleanupStats.failed,
+        zeroOutReviewed: zeroOutStats.reviewed,
+        zeroOutApplied: zeroOutStats.forcedToZero,
+        zeroOutFailed: zeroOutStats.failed
     };
 }
 

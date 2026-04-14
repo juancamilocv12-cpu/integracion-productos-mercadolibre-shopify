@@ -352,6 +352,106 @@ function shouldRecreateListing(item) {
     return false;
 }
 
+function isNonApprovedListing(item) {
+    const status = String(item.status || "").toLowerCase();
+    const subStatus = Array.isArray(item.sub_status)
+        ? item.sub_status.map((value) => String(value).toLowerCase())
+        : [];
+
+    if (status === "under_review") {
+        return true;
+    }
+
+    if (status === "inactive" && subStatus.includes("not_yet_active")) {
+        return true;
+    }
+
+    if (status === "inactive" && subStatus.includes("waiting_for_approval")) {
+        return true;
+    }
+
+    return false;
+}
+
+async function closeItem(itemId) {
+    try {
+        await authorizedRequest(() =>
+            apiClient.put(`/items/${itemId}`, {
+                status: "closed"
+            }, {
+                headers: authHeaders()
+            })
+        );
+        return true;
+    } catch (error) {
+        const status = error.response ? error.response.status : null;
+        if (status === 400 || status === 404) {
+            return false;
+        }
+        throw error;
+    }
+}
+
+async function cleanupNonApprovedMappedItems(mappingsBySku) {
+    const entries = Object.entries(mappingsBySku || {});
+    let reviewed = 0;
+    let closed = 0;
+    let failed = 0;
+    const closedItemIds = [];
+
+    for (const [sku, mapping] of entries) {
+        if (!mapping || !mapping.itemId) {
+            continue;
+        }
+
+        reviewed += 1;
+        try {
+            const item = await getItem(mapping.itemId);
+            if (!isNonApprovedListing(item)) {
+                continue;
+            }
+
+            const didClose = await closeItem(mapping.itemId);
+            if (didClose) {
+                closed += 1;
+                closedItemIds.push(String(mapping.itemId));
+                logger.warn("Closed non-approved Mercado Libre listing", {
+                    sku,
+                    itemId: mapping.itemId,
+                    status: item.status,
+                    sub_status: item.sub_status || []
+                });
+            }
+        } catch (error) {
+            failed += 1;
+            const details = error.response && error.response.data ? error.response.data : { message: error.message };
+            logger.error("Failed cleaning non-approved Mercado Libre listing", {
+                sku,
+                itemId: mapping.itemId,
+                details
+            });
+        }
+    }
+
+    return {
+        reviewed,
+        closed,
+        failed,
+        closedItemIds
+    };
+}
+
+async function setItemQuantity(itemId, quantity) {
+    const safeQuantity = Math.max(0, Math.floor(Number(quantity)));
+    await authorizedRequest(() =>
+        apiClient.put(`/items/${itemId}`, {
+            available_quantity: safeQuantity
+        }, {
+            headers: authHeaders()
+        })
+    );
+}
+
 async function resolveUpdatableItemId(itemId) {
     if (!itemId) {
         return null;
@@ -569,9 +669,11 @@ async function updateItem(itemId, product) {
 }
 
 module.exports = {
+    cleanupNonApprovedMappedItems,
     computePrice,
     createItem,
     updateItem,
+    setItemQuantity,
     searchItemBySku,
     resolveUpdatableItemId
 };

@@ -41,8 +41,14 @@ function saveMapping(sku, payload) {
     writeStore(store);
 }
 
+function getAllMappings() {
+    const store = readStore();
+    return store.items || {};
+}
+
 module.exports = {
     STORE_PATH,
+    getAllMappings,
     getMappingBySku,
     saveMapping
 };
