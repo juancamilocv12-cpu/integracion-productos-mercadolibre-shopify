@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-28T11:39:48.531Z",
+  "updatedAt": "2026-04-28T13:18:01.508Z",
   "items": {
     "111": {
       "itemId": "MCO1904841979",
@@ -78,6 +78,13 @@
       "lastSyncedPrice": 2900,
       "updatedAt": "2026-04-23T17:01:49.222Z"
     },
+    "789456": {
+      "itemId": "MCO1918602761",
+      "shopifyVariantId": 45956926275757,
+      "shopifyProductId": 8570072400045,
+      "lastSyncedPrice": 7980,
+      "updatedAt": "2026-04-28T13:17:13.435Z"
+    },
     "20260422": {
       "itemId": "MCO3880849378",
       "shopifyVariantId": 45932804473005,
@@ -97,77 +104,77 @@
       "shopifyVariantId": 45718317727917,
       "shopifyProductId": 8492329533613,
       "lastSyncedPrice": 159600,
-      "updatedAt": "2026-04-28T11:30:56.442Z"
+      "updatedAt": "2026-04-28T13:11:51.384Z"
     },
     "2000002080657": {
       "itemId": "MCO2526391350",
       "shopifyVariantId": 45718319628461,
       "shopifyProductId": 8492330221741,
       "lastSyncedPrice": 28500,
-      "updatedAt": "2026-04-28T11:30:56.925Z"
+      "updatedAt": "2026-04-28T13:11:51.777Z"
     },
     "2000002080633": {
       "itemId": "MCO2526326300",
       "shopifyVariantId": 45718310355117,
       "shopifyProductId": 8492326387885,
       "lastSyncedPrice": 142500,
-      "updatedAt": "2026-04-28T11:30:58.561Z"
+      "updatedAt": "2026-04-28T13:11:53.220Z"
     },
     "2000002160014": {
       "itemId": "MCO1900998001",
       "shopifyVariantId": 45718310387885,
       "shopifyProductId": 8492326420653,
       "lastSyncedPrice": 28500,
-      "updatedAt": "2026-04-28T11:30:55.168Z"
+      "updatedAt": "2026-04-28T13:11:50.497Z"
     },
     "2000002156871": {
       "itemId": "MCO1863165373",
       "shopifyVariantId": 45718304686253,
       "shopifyProductId": 8492323700909,
       "lastSyncedPrice": 45600,
-      "updatedAt": "2026-04-28T11:30:57.723Z"
+      "updatedAt": "2026-04-28T13:11:52.510Z"
     },
     "2000002080640": {
       "itemId": "MCO1863190423",
       "shopifyVariantId": 45718296330413,
       "shopifyProductId": 8492321538221,
       "lastSyncedPrice": 182400,
-      "updatedAt": "2026-04-28T11:30:59.388Z"
+      "updatedAt": "2026-04-28T13:11:53.922Z"
     },
     "2000001952795": {
       "itemId": "MCO1863133441",
       "shopifyVariantId": 45718303899821,
       "shopifyProductId": 8492323438765,
       "lastSyncedPrice": 34200,
-      "updatedAt": "2026-04-28T11:31:00.229Z"
+      "updatedAt": "2026-04-28T13:11:54.613Z"
     },
     "2000001796931": {
       "itemId": "MCO3748141022",
       "shopifyVariantId": 45718293741741,
       "shopifyProductId": 8492320686253,
       "lastSyncedPrice": 114000,
-      "updatedAt": "2026-04-28T11:31:01.029Z"
+      "updatedAt": "2026-04-28T13:11:55.310Z"
     },
     "2000002158912": {
       "itemId": "MCO3824827190",
       "shopifyVariantId": 45718310420653,
       "shopifyProductId": 8492326453421,
       "lastSyncedPrice": 74100,
-      "updatedAt": "2026-04-28T11:31:01.817Z"
+      "updatedAt": "2026-04-28T13:11:56.022Z"
     },
     "2000002178682": {
       "itemId": "MCO3829637712",
       "shopifyVariantId": 45718310453421,
       "shopifyProductId": 8492326453421,
       "lastSyncedPrice": 102600,
-      "updatedAt": "2026-04-28T11:31:02.651Z"
+      "updatedAt": "2026-04-28T13:11:56.750Z"
     },
     "2000002066019": {
       "itemId": "MCO1863190437",
       "shopifyVariantId": 45718318186669,
       "shopifyProductId": 8492329828525,
       "lastSyncedPrice": 108300,
-      "updatedAt": "2026-04-28T11:31:03.460Z"
+      "updatedAt": "2026-04-28T13:11:57.480Z"
     },
     "2000002166078": {
       "itemId": "MCO3753321944",
@@ -384,14 +391,14 @@
       "shopifyVariantId": 45718314451117,
       "shopifyProductId": 8492328059053,
       "lastSyncedPrice": 159600,
-      "updatedAt": "2026-04-28T11:31:33.446Z"
+      "updatedAt": "2026-04-28T13:12:17.211Z"
     },
     "2000002151524": {
       "itemId": "MCO1453386647",
       "shopifyVariantId": 45718314287277,
       "shopifyProductId": 8492327993517,
       "lastSyncedPrice": 102600,
-      "updatedAt": "2026-04-28T11:31:34.303Z"
+      "updatedAt": "2026-04-28T13:12:17.895Z"
     },
     "2000002151562": {
       "itemId": "MCO1453022683",
@@ -405,35 +412,35 @@
       "shopifyVariantId": 45718314516653,
       "shopifyProductId": 8492328091821,
       "lastSyncedPrice": 159600,
-      "updatedAt": "2026-04-28T11:31:36.194Z"
+      "updatedAt": "2026-04-28T13:12:19.331Z"
     },
     "2000002151548": {
       "itemId": "MCO3748468432",
       "shopifyVariantId": 45718314385581,
       "shopifyProductId": 8492328026285,
       "lastSyncedPrice": 159600,
-      "updatedAt": "2026-04-28T11:31:37.460Z"
+      "updatedAt": "2026-04-28T13:12:20.298Z"
     },
     "2000002186014": {
       "itemId": "MCO3748539502",
       "shopifyVariantId": 45718287777965,
       "shopifyProductId": 8492318392493,
       "lastSyncedPrice": 39900,
-      "updatedAt": "2026-04-28T11:31:38.308Z"
+      "updatedAt": "2026-04-28T13:12:21.047Z"
     },
     "2000002186021": {
       "itemId": "MCO3895063220",
       "shopifyVariantId": 45718287810733,
       "shopifyProductId": 8492318392493,
       "lastSyncedPrice": 62700,
-      "updatedAt": "2026-04-28T11:31:39.155Z"
+      "updatedAt": "2026-04-28T13:12:21.744Z"
     },
     "2000002186038": {
       "itemId": "MCO3897866106",
       "shopifyVariantId": 45718287843501,
       "shopifyProductId": 8492318392493,
       "lastSyncedPrice": 74100,
-      "updatedAt": "2026-04-28T11:31:39.968Z"
+      "updatedAt": "2026-04-28T13:12:22.469Z"
     },
     "2000002176930": {
       "itemId": "MCO3854788618",
@@ -461,56 +468,56 @@
       "shopifyVariantId": 45718288072877,
       "shopifyProductId": 8492318490797,
       "lastSyncedPrice": 39900,
-      "updatedAt": "2026-04-28T11:31:42.724Z"
+      "updatedAt": "2026-04-28T13:12:24.304Z"
     },
     "2000002176985": {
       "itemId": "MCO1911840291",
       "shopifyVariantId": 45718288105645,
       "shopifyProductId": 8492318490797,
       "lastSyncedPrice": 62700,
-      "updatedAt": "2026-04-28T11:31:43.561Z"
+      "updatedAt": "2026-04-28T13:12:24.982Z"
     },
     "2000002177005": {
       "itemId": "MCO1910301499",
       "shopifyVariantId": 45718288138413,
       "shopifyProductId": 8492318490797,
       "lastSyncedPrice": 74100,
-      "updatedAt": "2026-04-28T11:31:44.409Z"
+      "updatedAt": "2026-04-28T13:12:25.701Z"
     },
     "2000002177029": {
       "itemId": "MCO1863231341",
       "shopifyVariantId": 45718287974573,
       "shopifyProductId": 8492318458029,
       "lastSyncedPrice": 39900,
-      "updatedAt": "2026-04-28T11:31:45.285Z"
+      "updatedAt": "2026-04-28T13:12:26.386Z"
     },
     "2000002177012": {
       "itemId": "MCO1898256453",
       "shopifyVariantId": 45718288007341,
       "shopifyProductId": 8492318458029,
       "lastSyncedPrice": 62700,
-      "updatedAt": "2026-04-28T11:31:46.161Z"
+      "updatedAt": "2026-04-28T13:12:27.150Z"
     },
     "2000002177036": {
       "itemId": "MCO3837882866",
       "shopifyVariantId": 45718288040109,
       "shopifyProductId": 8492318458029,
       "lastSyncedPrice": 74100,
-      "updatedAt": "2026-04-28T11:31:47.069Z"
+      "updatedAt": "2026-04-28T13:12:27.904Z"
     },
     "2000002176961": {
       "itemId": "MCO3855978896",
       "shopifyVariantId": 45718301049005,
       "shopifyProductId": 8492322652333,
       "lastSyncedPrice": 39900,
-      "updatedAt": "2026-04-28T11:31:47.951Z"
+      "updatedAt": "2026-04-28T13:12:28.638Z"
     },
     "2000002176954": {
       "itemId": "MCO3894960604",
       "shopifyVariantId": 45718301081773,
       "shopifyProductId": 8492322652333,
       "lastSyncedPrice": 62700,
-      "updatedAt": "2026-04-28T11:31:48.843Z"
+      "updatedAt": "2026-04-28T13:12:29.444Z"
     },
     "2000002176978": {
       "itemId": "MCO3897892188",
@@ -545,49 +552,49 @@
       "shopifyVariantId": 45718298230957,
       "shopifyProductId": 8492322029741,
       "lastSyncedPrice": 28500,
-      "updatedAt": "2026-04-28T11:31:52.446Z"
+      "updatedAt": "2026-04-28T13:12:31.703Z"
     },
     "2000001952818": {
       "itemId": "MCO1863213351",
       "shopifyVariantId": 45718298198189,
       "shopifyProductId": 8492321996973,
       "lastSyncedPrice": 45600,
-      "updatedAt": "2026-04-28T11:31:53.285Z"
+      "updatedAt": "2026-04-28T13:12:32.424Z"
     },
     "2000002043508": {
       "itemId": "MCO3854647176",
       "shopifyVariantId": 45718318317741,
       "shopifyProductId": 8492329926829,
       "lastSyncedPrice": 102600,
-      "updatedAt": "2026-04-28T11:31:54.126Z"
+      "updatedAt": "2026-04-28T13:12:33.154Z"
     },
     "2000002022381": {
       "itemId": "MCO2540581958",
       "shopifyVariantId": 45718318350509,
       "shopifyProductId": 8492329926829,
       "lastSyncedPrice": 114000,
-      "updatedAt": "2026-04-28T11:31:54.965Z"
+      "updatedAt": "2026-04-28T13:12:33.847Z"
     },
     "2000002022374": {
       "itemId": "MCO1481556507",
       "shopifyVariantId": 45718318383277,
       "shopifyProductId": 8492329926829,
       "lastSyncedPrice": 125400,
-      "updatedAt": "2026-04-28T11:31:55.829Z"
+      "updatedAt": "2026-04-28T13:12:34.577Z"
     },
     "2000002022398": {
       "itemId": "MCO2540582318",
       "shopifyVariantId": 45718318416045,
       "shopifyProductId": 8492329926829,
       "lastSyncedPrice": 136800,
-      "updatedAt": "2026-04-28T11:31:57.078Z"
+      "updatedAt": "2026-04-28T13:12:35.383Z"
     },
     "2000002064725": {
       "itemId": "MCO2540188614",
       "shopifyVariantId": 45718318448813,
       "shopifyProductId": 8492329926829,
       "lastSyncedPrice": 159600,
-      "updatedAt": "2026-04-28T11:31:57.568Z"
+      "updatedAt": "2026-04-28T13:12:35.728Z"
     },
     "2000002171973": {
       "itemId": "MCO1863978009",
@@ -643,7 +650,7 @@
       "shopifyVariantId": 45718290432173,
       "shopifyProductId": 8492319506605,
       "lastSyncedPrice": 136800,
-      "updatedAt": "2026-04-28T11:32:02.843Z"
+      "updatedAt": "2026-04-28T13:12:38.955Z"
     },
     "2000002183617": {
       "itemId": "MCO3780379406",
@@ -657,7 +664,7 @@
       "shopifyVariantId": 45718290497709,
       "shopifyProductId": 8492319506605,
       "lastSyncedPrice": 171000,
-      "updatedAt": "2026-04-28T11:32:04.417Z"
+      "updatedAt": "2026-04-28T13:12:40.037Z"
     },
     "2000002182375": {
       "itemId": "MCO3750527686",
@@ -1084,42 +1091,42 @@
       "shopifyVariantId": 45718287384749,
       "shopifyProductId": 8492318261421,
       "lastSyncedPrice": 182400,
-      "updatedAt": "2026-04-28T11:32:44.478Z"
+      "updatedAt": "2026-04-28T13:13:05.767Z"
     },
     "2000002190257": {
       "itemId": "MCO3749709150",
       "shopifyVariantId": 45718287417517,
       "shopifyProductId": 8492318261421,
       "lastSyncedPrice": 193800,
-      "updatedAt": "2026-04-28T11:32:45.443Z"
+      "updatedAt": "2026-04-28T13:13:06.445Z"
     },
     "2000002190264": {
       "itemId": "MCO3895063252",
       "shopifyVariantId": 45718287450285,
       "shopifyProductId": 8492318261421,
       "lastSyncedPrice": 216600,
-      "updatedAt": "2026-04-28T11:32:46.329Z"
+      "updatedAt": "2026-04-28T13:13:07.172Z"
     },
     "2000021843837": {
       "itemId": "MCO3753864048",
       "shopifyVariantId": 45718287581357,
       "shopifyProductId": 8492318326957,
       "lastSyncedPrice": 182400,
-      "updatedAt": "2026-04-28T11:32:47.147Z"
+      "updatedAt": "2026-04-28T13:13:07.908Z"
     },
     "2000021843844": {
       "itemId": "MCO3882222054",
       "shopifyVariantId": 45718287614125,
       "shopifyProductId": 8492318326957,
       "lastSyncedPrice": 193800,
-      "updatedAt": "2026-04-28T11:32:48.001Z"
+      "updatedAt": "2026-04-28T13:13:10.645Z"
     },
     "2000021843851": {
       "itemId": "MCO3897879112",
       "shopifyVariantId": 45718287646893,
       "shopifyProductId": 8492318326957,
       "lastSyncedPrice": 216600,
-      "updatedAt": "2026-04-28T11:32:48.817Z"
+      "updatedAt": "2026-04-28T13:13:11.370Z"
     },
     "20000002184379": {
       "itemId": "MCO1863978231",
@@ -1140,28 +1147,28 @@
       "shopifyVariantId": 45718287351981,
       "shopifyProductId": 8492318228653,
       "lastSyncedPrice": 216600,
-      "updatedAt": "2026-04-28T11:32:50.824Z"
+      "updatedAt": "2026-04-28T13:13:12.825Z"
     },
     "2000021843868": {
       "itemId": "MCO1865352277",
       "shopifyVariantId": 45718287483053,
       "shopifyProductId": 8492318294189,
       "lastSyncedPrice": 182400,
-      "updatedAt": "2026-04-28T11:32:51.647Z"
+      "updatedAt": "2026-04-28T13:13:13.519Z"
     },
     "2000021843875": {
       "itemId": "MCO3894947956",
       "shopifyVariantId": 45718287515821,
       "shopifyProductId": 8492318294189,
       "lastSyncedPrice": 193800,
-      "updatedAt": "2026-04-28T11:32:52.487Z"
+      "updatedAt": "2026-04-28T13:13:14.242Z"
     },
     "2000021843882": {
       "itemId": "MCO3897892216",
       "shopifyVariantId": 45718287548589,
       "shopifyProductId": 8492318294189,
       "lastSyncedPrice": 216600,
-      "updatedAt": "2026-04-28T11:32:53.338Z"
+      "updatedAt": "2026-04-28T13:13:14.952Z"
     },
     "2000002171652": {
       "itemId": "MCO3750570872",
@@ -1343,7 +1350,7 @@
       "shopifyVariantId": 45718287679661,
       "shopifyProductId": 8492318359725,
       "lastSyncedPrice": 193800,
-      "updatedAt": "2026-04-28T11:33:11.404Z"
+      "updatedAt": "2026-04-28T13:13:25.697Z"
     },
     "2000002186304": {
       "itemId": "MCO1865326471",
@@ -1371,7 +1378,7 @@
       "shopifyVariantId": 45718288203949,
       "shopifyProductId": 8492318523565,
       "lastSyncedPrice": 193800,
-      "updatedAt": "2026-04-28T11:33:14.139Z"
+      "updatedAt": "2026-04-28T13:13:27.562Z"
     },
     "2000002186397": {
       "itemId": "MCO1866851865",
@@ -1630,105 +1637,105 @@
       "shopifyVariantId": 45718317629613,
       "shopifyProductId": 8492329500845,
       "lastSyncedPrice": 25080,
-      "updatedAt": "2026-04-28T11:33:40.364Z"
+      "updatedAt": "2026-04-28T13:13:43.236Z"
     },
     "2000002120483": {
       "itemId": "MCO1863200899",
       "shopifyVariantId": 45718317662381,
       "shopifyProductId": 8492329500845,
       "lastSyncedPrice": 28500,
-      "updatedAt": "2026-04-28T11:33:41.226Z"
+      "updatedAt": "2026-04-28T13:13:43.930Z"
     },
     "2000002152125": {
       "itemId": "MCO2662550094",
       "shopifyVariantId": 45718317695149,
       "shopifyProductId": 8492329500845,
       "lastSyncedPrice": 66120,
-      "updatedAt": "2026-04-28T11:33:42.051Z"
+      "updatedAt": "2026-04-28T13:13:44.782Z"
     },
     "2000002160786": {
       "itemId": "MCO1901022733",
       "shopifyVariantId": 45718302228653,
       "shopifyProductId": 8492322947245,
       "lastSyncedPrice": 15504,
-      "updatedAt": "2026-04-28T11:33:42.875Z"
+      "updatedAt": "2026-04-28T13:13:45.463Z"
     },
     "2000002152019": {
       "itemId": "MCO1481666753",
       "shopifyVariantId": 45718302261421,
       "shopifyProductId": 8492322947245,
       "lastSyncedPrice": 43320,
-      "updatedAt": "2026-04-28T11:33:44.115Z"
+      "updatedAt": "2026-04-28T13:13:48.303Z"
     },
     "2000002169659": {
       "itemId": "MCO1863200909",
       "shopifyVariantId": 45718302195885,
       "shopifyProductId": 8492322914477,
       "lastSyncedPrice": 38760,
-      "updatedAt": "2026-04-28T11:33:44.615Z"
+      "updatedAt": "2026-04-28T13:13:48.645Z"
     },
     "2000002181873": {
       "itemId": "MCO3750036160",
       "shopifyVariantId": 45718287155373,
       "shopifyProductId": 8492318163117,
       "lastSyncedPrice": 28500,
-      "updatedAt": "2026-04-28T11:33:45.419Z"
+      "updatedAt": "2026-04-28T13:13:49.376Z"
     },
     "2000002181880": {
       "itemId": "MCO1863232109",
       "shopifyVariantId": 45718287188141,
       "shopifyProductId": 8492318163117,
       "lastSyncedPrice": 34200,
-      "updatedAt": "2026-04-28T11:33:46.250Z"
+      "updatedAt": "2026-04-28T13:13:50.095Z"
     },
     "2000002181835": {
       "itemId": "MCO3750514930",
       "shopifyVariantId": 45718291677357,
       "shopifyProductId": 8492319768749,
       "lastSyncedPrice": 39900,
-      "updatedAt": "2026-04-28T11:33:47.061Z"
+      "updatedAt": "2026-04-28T13:13:50.809Z"
     },
     "2000002181842": {
       "itemId": "MCO1863242705",
       "shopifyVariantId": 45718291710125,
       "shopifyProductId": 8492319768749,
       "lastSyncedPrice": 45600,
-      "updatedAt": "2026-04-28T11:33:47.903Z"
+      "updatedAt": "2026-04-28T13:13:51.502Z"
     },
     "2000002119555": {
       "itemId": "MCO3748565634",
       "shopifyVariantId": 45718318153901,
       "shopifyProductId": 8492329795757,
       "lastSyncedPrice": 31920,
-      "updatedAt": "2026-04-28T11:33:48.760Z"
+      "updatedAt": "2026-04-28T13:13:52.202Z"
     },
     "2000002181859": {
       "itemId": "MCO1864011461",
       "shopifyVariantId": 45718291808429,
       "shopifyProductId": 8492319834285,
       "lastSyncedPrice": 39900,
-      "updatedAt": "2026-04-28T11:33:49.584Z"
+      "updatedAt": "2026-04-28T13:13:52.934Z"
     },
     "2000002181866": {
       "itemId": "MCO1863232125",
       "shopifyVariantId": 45718291841197,
       "shopifyProductId": 8492319834285,
       "lastSyncedPrice": 45600,
-      "updatedAt": "2026-04-28T11:33:50.441Z"
+      "updatedAt": "2026-04-28T13:13:53.643Z"
     },
     "2000002181811": {
       "itemId": "MCO3749774284",
       "shopifyVariantId": 45718291742893,
       "shopifyProductId": 8492319801517,
       "lastSyncedPrice": 39900,
-      "updatedAt": "2026-04-28T11:33:51.265Z"
+      "updatedAt": "2026-04-28T13:13:54.439Z"
     },
     "2000002181828": {
       "itemId": "MCO1863242721",
       "shopifyVariantId": 45718291775661,
       "shopifyProductId": 8492319801517,
       "lastSyncedPrice": 45600,
-      "updatedAt": "2026-04-28T11:33:52.168Z"
+      "updatedAt": "2026-04-28T13:13:55.128Z"
     },
     "2000002152347": {
       "itemId": "MCO2662601222",
@@ -1742,7 +1749,7 @@
       "shopifyVariantId": 45718301442221,
       "shopifyProductId": 8492322717869,
       "lastSyncedPrice": 29640,
-      "updatedAt": "2026-04-28T11:33:53.669Z"
+      "updatedAt": "2026-04-28T13:13:58.289Z"
     },
     "2000002152231": {
       "itemId": "MCO1901022759",
@@ -1756,14 +1763,14 @@
       "shopifyVariantId": 45718291873965,
       "shopifyProductId": 8492319867053,
       "lastSyncedPrice": 28500,
-      "updatedAt": "2026-04-28T11:33:55.165Z"
+      "updatedAt": "2026-04-28T13:13:59.429Z"
     },
     "2000002181927": {
       "itemId": "MCO3748565648",
       "shopifyVariantId": 45718291906733,
       "shopifyProductId": 8492319867053,
       "lastSyncedPrice": 34200,
-      "updatedAt": "2026-04-28T11:33:56.029Z"
+      "updatedAt": "2026-04-28T13:14:00.121Z"
     },
     "2000002165965": {
       "itemId": "MCO3780477436",
@@ -2526,7 +2533,7 @@
       "shopifyVariantId": 45718291415213,
       "shopifyProductId": 8492319703213,
       "lastSyncedPrice": 136800,
-      "updatedAt": "2026-04-28T11:35:40.281Z"
+      "updatedAt": "2026-04-28T13:15:08.161Z"
     },
     "2000002185772": {
       "itemId": "MCO1863799975",
@@ -2540,7 +2547,7 @@
       "shopifyVariantId": 45718291480749,
       "shopifyProductId": 8492319703213,
       "lastSyncedPrice": 165300,
-      "updatedAt": "2026-04-28T11:35:41.762Z"
+      "updatedAt": "2026-04-28T13:15:09.281Z"
     },
     "2000002180791": {
       "itemId": "MCO3750528428",
@@ -2715,182 +2722,182 @@
       "shopifyVariantId": 45718318842029,
       "shopifyProductId": 8492330057901,
       "lastSyncedPrice": 96900,
-      "updatedAt": "2026-04-28T11:35:58.071Z"
+      "updatedAt": "2026-04-28T13:15:19.027Z"
     },
     "2000001029978": {
       "itemId": "MCO2540068286",
       "shopifyVariantId": 45718318874797,
       "shopifyProductId": 8492330057901,
       "lastSyncedPrice": 102600,
-      "updatedAt": "2026-04-28T11:35:58.568Z"
+      "updatedAt": "2026-04-28T13:15:19.393Z"
     },
     "2000001115442": {
       "itemId": "MCO2536343322",
       "shopifyVariantId": 45718318907565,
       "shopifyProductId": 8492330057901,
       "lastSyncedPrice": 114000,
-      "updatedAt": "2026-04-28T11:35:59.828Z"
+      "updatedAt": "2026-04-28T13:15:20.196Z"
     },
     "2000001071830": {
       "itemId": "MCO1453385331",
       "shopifyVariantId": 45718318940333,
       "shopifyProductId": 8492330057901,
       "lastSyncedPrice": 125400,
-      "updatedAt": "2026-04-28T11:36:00.367Z"
+      "updatedAt": "2026-04-28T13:15:20.618Z"
     },
     "2000001169070": {
       "itemId": "MCO1453385753",
       "shopifyVariantId": 45718318973101,
       "shopifyProductId": 8492330057901,
       "lastSyncedPrice": 142500,
-      "updatedAt": "2026-04-28T11:36:01.629Z"
+      "updatedAt": "2026-04-28T13:15:21.431Z"
     },
     "2000000954950": {
       "itemId": "MCO2540930384",
       "shopifyVariantId": 45718319005869,
       "shopifyProductId": 8492330090669,
       "lastSyncedPrice": 114000,
-      "updatedAt": "2026-04-28T11:36:02.133Z"
+      "updatedAt": "2026-04-28T13:15:21.776Z"
     },
     "2000001158494": {
       "itemId": "MCO1481720705",
       "shopifyVariantId": 45718319038637,
       "shopifyProductId": 8492330090669,
       "lastSyncedPrice": 125400,
-      "updatedAt": "2026-04-28T11:36:02.955Z"
+      "updatedAt": "2026-04-28T13:15:22.482Z"
     },
     "2000000954974": {
       "itemId": "MCO1453866661",
       "shopifyVariantId": 45718319071405,
       "shopifyProductId": 8492330090669,
       "lastSyncedPrice": 136800,
-      "updatedAt": "2026-04-28T11:36:04.221Z"
+      "updatedAt": "2026-04-28T13:15:23.337Z"
     },
     "2000001088418": {
       "itemId": "MCO1453866887",
       "shopifyVariantId": 45718319104173,
       "shopifyProductId": 8492330090669,
       "lastSyncedPrice": 125400,
-      "updatedAt": "2026-04-28T11:36:04.708Z"
+      "updatedAt": "2026-04-28T13:15:23.707Z"
     },
     "2000001122846": {
       "itemId": "MCO1453853989",
       "shopifyVariantId": 45718319136941,
       "shopifyProductId": 8492330090669,
       "lastSyncedPrice": 135660,
-      "updatedAt": "2026-04-28T11:36:05.572Z"
+      "updatedAt": "2026-04-28T13:15:24.418Z"
     },
     "2000002025191": {
       "itemId": "MCO1453394727",
       "shopifyVariantId": 45718319169709,
       "shopifyProductId": 8492330123437,
       "lastSyncedPrice": 171000,
-      "updatedAt": "2026-04-28T11:36:06.520Z"
+      "updatedAt": "2026-04-28T13:15:25.141Z"
     },
     "2000002042198": {
       "itemId": "MCO1453430243",
       "shopifyVariantId": 45718319202477,
       "shopifyProductId": 8492330123437,
       "lastSyncedPrice": 188100,
-      "updatedAt": "2026-04-28T11:36:07.380Z"
+      "updatedAt": "2026-04-28T13:15:25.917Z"
     },
     "2000002152255": {
       "itemId": "MCO3895063384",
       "shopifyVariantId": 45718319235245,
       "shopifyProductId": 8492330123437,
       "lastSyncedPrice": 205200,
-      "updatedAt": "2026-04-28T11:36:08.231Z"
+      "updatedAt": "2026-04-28T13:15:26.574Z"
     },
     "2000002042181": {
       "itemId": "MCO2540646596",
       "shopifyVariantId": 45718319268013,
       "shopifyProductId": 8492330123437,
       "lastSyncedPrice": 216600,
-      "updatedAt": "2026-04-28T11:36:09.520Z"
+      "updatedAt": "2026-04-28T13:15:27.393Z"
     },
     "2000002152279": {
       "itemId": "MCO3897879200",
       "shopifyVariantId": 45718319300781,
       "shopifyProductId": 8492330123437,
       "lastSyncedPrice": 267900,
-      "updatedAt": "2026-04-28T11:36:10.018Z"
+      "updatedAt": "2026-04-28T13:15:27.782Z"
     },
     "2000002173199": {
       "itemId": "MCO1885120383",
       "shopifyVariantId": 45718302064813,
       "shopifyProductId": 8492322848941,
       "lastSyncedPrice": 216600,
-      "updatedAt": "2026-04-28T11:36:10.831Z"
+      "updatedAt": "2026-04-28T13:15:28.494Z"
     },
     "2000002173205": {
       "itemId": "MCO3802050324",
       "shopifyVariantId": 45718302097581,
       "shopifyProductId": 8492322848941,
       "lastSyncedPrice": 228000,
-      "updatedAt": "2026-04-28T11:36:11.701Z"
+      "updatedAt": "2026-04-28T13:15:29.188Z"
     },
     "2000002173212": {
       "itemId": "MCO3897866248",
       "shopifyVariantId": 45718302130349,
       "shopifyProductId": 8492322848941,
       "lastSyncedPrice": 273600,
-      "updatedAt": "2026-04-28T11:36:12.558Z"
+      "updatedAt": "2026-04-28T13:15:29.960Z"
     },
     "2000002181781": {
       "itemId": "MCO3894960732",
       "shopifyVariantId": 45718295412909,
       "shopifyProductId": 8492321177773,
       "lastSyncedPrice": 228000,
-      "updatedAt": "2026-04-28T11:36:13.419Z"
+      "updatedAt": "2026-04-28T13:15:30.708Z"
     },
     "2000002181798": {
       "itemId": "MCO3897905298",
       "shopifyVariantId": 45718295445677,
       "shopifyProductId": 8492321177773,
       "lastSyncedPrice": 250800,
-      "updatedAt": "2026-04-28T11:36:14.288Z"
+      "updatedAt": "2026-04-28T13:15:31.397Z"
     },
     "2000002181804": {
       "itemId": "MCO1876738875",
       "shopifyVariantId": 45718295478445,
       "shopifyProductId": 8492321177773,
       "lastSyncedPrice": 285000,
-      "updatedAt": "2026-04-28T11:36:15.117Z"
+      "updatedAt": "2026-04-28T13:15:32.104Z"
     },
     "2000002041153": {
       "itemId": "MCO2540070656",
       "shopifyVariantId": 45718319399085,
       "shopifyProductId": 8492330188973,
       "lastSyncedPrice": 62700,
-      "updatedAt": "2026-04-28T11:36:15.973Z"
+      "updatedAt": "2026-04-28T13:15:32.894Z"
     },
     "2000002043164": {
       "itemId": "MCO1453388283",
       "shopifyVariantId": 45718319431853,
       "shopifyProductId": 8492330188973,
       "lastSyncedPrice": 68400,
-      "updatedAt": "2026-04-28T11:36:17.243Z"
+      "updatedAt": "2026-04-28T13:15:33.678Z"
     },
     "2000002041160": {
       "itemId": "MCO594543694",
       "shopifyVariantId": 45718319464621,
       "shopifyProductId": 8492330188973,
       "lastSyncedPrice": 79800,
-      "updatedAt": "2026-04-28T11:36:17.720Z"
+      "updatedAt": "2026-04-28T13:15:34.066Z"
     },
     "2000002119425": {
       "itemId": "MCO2540186478",
       "shopifyVariantId": 45718319497389,
       "shopifyProductId": 8492330188973,
       "lastSyncedPrice": 91200,
-      "updatedAt": "2026-04-28T11:36:18.989Z"
+      "updatedAt": "2026-04-28T13:15:34.889Z"
     },
     "2000002119432": {
       "itemId": "MCO2540581620",
       "shopifyVariantId": 45718319530157,
       "shopifyProductId": 8492330188973,
       "lastSyncedPrice": 71820,
-      "updatedAt": "2026-04-28T11:36:19.948Z"
+      "updatedAt": "2026-04-28T13:15:35.314Z"
     },
     "2000002170235": {
       "itemId": "MCO3750607954",
@@ -2911,7 +2918,7 @@
       "shopifyVariantId": 45718304456877,
       "shopifyProductId": 8492323569837,
       "lastSyncedPrice": 132240,
-      "updatedAt": "2026-04-28T11:36:21.740Z"
+      "updatedAt": "2026-04-28T13:15:36.463Z"
     },
     "2000002170181": {
       "itemId": "MCO1863978813",
@@ -3072,7 +3079,7 @@
       "shopifyVariantId": 45718303113389,
       "shopifyProductId": 8492323012781,
       "lastSyncedPrice": 114000,
-      "updatedAt": "2026-04-28T11:36:36.409Z"
+      "updatedAt": "2026-04-28T13:15:44.910Z"
     },
     "2000002162278": {
       "itemId": "MCO3854789312",
@@ -3548,14 +3555,14 @@
       "shopifyVariantId": 45718292267181,
       "shopifyProductId": 8492320063661,
       "lastSyncedPrice": 142500,
-      "updatedAt": "2026-04-28T11:37:36.101Z"
+      "updatedAt": "2026-04-28T13:16:27.410Z"
     },
     "2000002183945": {
       "itemId": "MCO3897892330",
       "shopifyVariantId": 45718292299949,
       "shopifyProductId": 8492320063661,
       "lastSyncedPrice": 153900,
-      "updatedAt": "2026-04-28T11:37:36.937Z"
+      "updatedAt": "2026-04-28T13:16:28.117Z"
     },
     "2000002183877": {
       "itemId": "MCO1863979043",
@@ -3667,7 +3674,7 @@
       "shopifyVariantId": 45718294986925,
       "shopifyProductId": 8492321079469,
       "lastSyncedPrice": 174420,
-      "updatedAt": "2026-04-28T11:38:13.035Z"
+      "updatedAt": "2026-04-28T13:16:52.263Z"
     },
     "2000002145059": {
       "itemId": "MCO3780427538",
@@ -3681,56 +3688,56 @@
       "shopifyVariantId": 45718295052461,
       "shopifyProductId": 8492321079469,
       "lastSyncedPrice": 213180,
-      "updatedAt": "2026-04-28T11:38:14.139Z"
+      "updatedAt": "2026-04-28T13:16:53.032Z"
     },
     "2000001993972": {
       "itemId": "MCO3748419868",
       "shopifyVariantId": 45718318481581,
       "shopifyProductId": 8492329959597,
       "lastSyncedPrice": 27360,
-      "updatedAt": "2026-04-28T11:38:18.791Z"
+      "updatedAt": "2026-04-28T13:16:56.363Z"
     },
     "2000001948040": {
-      "itemId": "MCO1918585605",
+      "itemId": "MCO1918576529",
       "shopifyVariantId": 45718307045549,
       "shopifyProductId": 8492324978861,
       "lastSyncedPrice": 20520,
-      "updatedAt": "2026-04-28T11:38:21.076Z"
+      "updatedAt": "2026-04-28T13:16:57.788Z"
     },
     "2000001948033": {
       "itemId": "MCO3854789602",
       "shopifyVariantId": 45718307078317,
       "shopifyProductId": 8492324978861,
       "lastSyncedPrice": 22800,
-      "updatedAt": "2026-04-28T11:38:21.904Z"
+      "updatedAt": "2026-04-28T13:16:58.471Z"
     },
     "2000002185963": {
       "itemId": "MCO3854647594",
       "shopifyVariantId": 45718288629933,
       "shopifyProductId": 8492318621869,
       "lastSyncedPrice": 63840,
-      "updatedAt": "2026-04-28T11:38:22.717Z"
+      "updatedAt": "2026-04-28T13:16:59.190Z"
     },
     "2000002185970": {
       "itemId": "MCO3854722048",
       "shopifyVariantId": 45718288662701,
       "shopifyProductId": 8492318621869,
       "lastSyncedPrice": 68400,
-      "updatedAt": "2026-04-28T11:38:23.546Z"
+      "updatedAt": "2026-04-28T13:16:59.872Z"
     },
     "2000002185987": {
       "itemId": "MCO1900989699",
       "shopifyVariantId": 45718288695469,
       "shopifyProductId": 8492318621869,
       "lastSyncedPrice": 74100,
-      "updatedAt": "2026-04-28T11:38:24.378Z"
+      "updatedAt": "2026-04-28T13:17:00.579Z"
     },
     "2000002185994": {
       "itemId": "MCO1864150939",
       "shopifyVariantId": 45718288728237,
       "shopifyProductId": 8492318621869,
       "lastSyncedPrice": 85500,
-      "updatedAt": "2026-04-28T11:38:25.219Z"
+      "updatedAt": "2026-04-28T13:17:01.261Z"
     },
     "2000002186007": {
       "itemId": "MCO3748541568",
@@ -3744,70 +3751,70 @@
       "shopifyVariantId": 45718318678189,
       "shopifyProductId": 8492330025133,
       "lastSyncedPrice": 68400,
-      "updatedAt": "2026-04-28T11:38:26.753Z"
+      "updatedAt": "2026-04-28T13:17:02.324Z"
     },
     "2000001993934": {
       "itemId": "MCO2669368908",
       "shopifyVariantId": 45718318710957,
       "shopifyProductId": 8492330025133,
       "lastSyncedPrice": 74100,
-      "updatedAt": "2026-04-28T11:38:27.597Z"
+      "updatedAt": "2026-04-28T13:17:03.032Z"
     },
     "2000001993941": {
       "itemId": "MCO3748470356",
       "shopifyVariantId": 45718318743725,
       "shopifyProductId": 8492330025133,
       "lastSyncedPrice": 79800,
-      "updatedAt": "2026-04-28T11:38:28.422Z"
+      "updatedAt": "2026-04-28T13:17:03.706Z"
     },
     "2000001993958": {
       "itemId": "MCO2669344452",
       "shopifyVariantId": 45718318776493,
       "shopifyProductId": 8492330025133,
       "lastSyncedPrice": 91200,
-      "updatedAt": "2026-04-28T11:38:29.298Z"
+      "updatedAt": "2026-04-28T13:17:04.400Z"
     },
     "2000001993965": {
       "itemId": "MCO1484093523",
       "shopifyVariantId": 45718318809261,
       "shopifyProductId": 8492330025133,
       "lastSyncedPrice": 96900,
-      "updatedAt": "2026-04-28T11:38:30.141Z"
+      "updatedAt": "2026-04-28T13:17:05.159Z"
     },
     "2000001904817": {
       "itemId": "MCO1484080485",
       "shopifyVariantId": 45718318514349,
       "shopifyProductId": 8492329992365,
       "lastSyncedPrice": 63840,
-      "updatedAt": "2026-04-28T11:38:31.387Z"
+      "updatedAt": "2026-04-28T13:17:05.963Z"
     },
     "2000001948026": {
       "itemId": "MCO1484080481",
       "shopifyVariantId": 45718318547117,
       "shopifyProductId": 8492329992365,
       "lastSyncedPrice": 68400,
-      "updatedAt": "2026-04-28T11:38:32.300Z"
+      "updatedAt": "2026-04-28T13:17:06.394Z"
     },
     "2000001904824": {
       "itemId": "MCO3854660658",
       "shopifyVariantId": 45718318579885,
       "shopifyProductId": 8492329992365,
       "lastSyncedPrice": 74100,
-      "updatedAt": "2026-04-28T11:38:32.817Z"
+      "updatedAt": "2026-04-28T13:17:06.779Z"
     },
     "2000001904831": {
       "itemId": "MCO1484093525",
       "shopifyVariantId": 45718318612653,
       "shopifyProductId": 8492329992365,
       "lastSyncedPrice": 85500,
-      "updatedAt": "2026-04-28T11:38:33.629Z"
+      "updatedAt": "2026-04-28T13:17:07.497Z"
     },
     "2000001904848": {
       "itemId": "MCO1484080483",
       "shopifyVariantId": 45718318645421,
       "shopifyProductId": 8492329992365,
       "lastSyncedPrice": 91200,
-      "updatedAt": "2026-04-28T11:38:34.463Z"
+      "updatedAt": "2026-04-28T13:17:08.221Z"
     },
     "2000002166726": {
       "itemId": "MCO3854789642",
@@ -3842,7 +3849,7 @@
       "shopifyVariantId": 45718304751789,
       "shopifyProductId": 8492323766445,
       "lastSyncedPrice": 34200,
-      "updatedAt": "2026-04-28T11:38:49.351Z"
+      "updatedAt": "2026-04-28T13:17:19.606Z"
     },
     "2000001796238": {
       "itemId": "MCO1863999863",
@@ -3863,7 +3870,7 @@
       "shopifyVariantId": 45718294200493,
       "shopifyProductId": 8492320784557,
       "lastSyncedPrice": 39900,
-      "updatedAt": "2026-04-28T11:38:54.324Z"
+      "updatedAt": "2026-04-28T13:17:23.003Z"
     },
     "2000002147589": {
       "itemId": "MCO3762217766",
@@ -3880,11 +3887,11 @@
       "updatedAt": "2026-03-26T06:54:49.054Z"
     },
     "2000002121022": {
-      "itemId": "MCO1918585637",
+      "itemId": "MCO1918602777",
       "shopifyVariantId": 45718298165421,
       "shopifyProductId": 8492321964205,
       "lastSyncedPrice": 13680,
-      "updatedAt": "2026-04-28T11:39:00.065Z"
+      "updatedAt": "2026-04-28T13:17:27.031Z"
     },
     "2000000280707": {
       "itemId": "MCO1865009671",
@@ -3898,49 +3905,49 @@
       "shopifyVariantId": 45718303604909,
       "shopifyProductId": 8492323274925,
       "lastSyncedPrice": 33915,
-      "updatedAt": "2026-04-28T11:39:02.159Z"
+      "updatedAt": "2026-04-28T13:17:28.509Z"
     },
     "2000002168072": {
       "itemId": "MCO3748605054",
       "shopifyVariantId": 45718303572141,
       "shopifyProductId": 8492323242157,
       "lastSyncedPrice": 31920,
-      "updatedAt": "2026-04-28T11:39:03.047Z"
+      "updatedAt": "2026-04-28T13:17:29.257Z"
     },
     "2000002168096": {
       "itemId": "MCO3748419972",
       "shopifyVariantId": 45718303506605,
       "shopifyProductId": 8492323176621,
       "lastSyncedPrice": 39900,
-      "updatedAt": "2026-04-28T11:39:03.895Z"
+      "updatedAt": "2026-04-28T13:17:29.963Z"
     },
     "2000002168089": {
-      "itemId": "MCO1918572527",
+      "itemId": "MCO1918602781",
       "shopifyVariantId": 45718303539373,
       "shopifyProductId": 8492323209389,
       "lastSyncedPrice": 39900,
-      "updatedAt": "2026-04-28T11:39:06.613Z"
+      "updatedAt": "2026-04-28T13:17:32.057Z"
     },
     "2000002168102": {
       "itemId": "MCO3748541660",
       "shopifyVariantId": 45718303473837,
       "shopifyProductId": 8492323143853,
       "lastSyncedPrice": 39900,
-      "updatedAt": "2026-04-28T11:39:07.462Z"
+      "updatedAt": "2026-04-28T13:17:32.734Z"
     },
     "2000002159865": {
       "itemId": "MCO3748566894",
       "shopifyVariantId": 45718298394797,
       "shopifyProductId": 8492322128045,
       "lastSyncedPrice": 73986,
-      "updatedAt": "2026-04-28T11:39:09.144Z"
+      "updatedAt": "2026-04-28T13:17:34.096Z"
     },
     "2000002159872": {
       "itemId": "MCO1863220693",
       "shopifyVariantId": 45718298427565,
       "shopifyProductId": 8492322128045,
       "lastSyncedPrice": 28386,
-      "updatedAt": "2026-04-28T11:39:09.965Z"
+      "updatedAt": "2026-04-28T13:17:34.844Z"
     },
     "2000002147640": {
       "itemId": "MCO1901023529",
@@ -4031,7 +4038,7 @@
       "shopifyVariantId": 45718288826541,
       "shopifyProductId": 8492318654637,
       "lastSyncedPrice": 57000,
-      "updatedAt": "2026-04-28T11:39:19.068Z"
+      "updatedAt": "2026-04-28T13:17:40.302Z"
     },
     "2000002144380": {
       "itemId": "MCO3854789742",
@@ -4066,7 +4073,7 @@
       "shopifyVariantId": 45718313304237,
       "shopifyProductId": 8492327469229,
       "lastSyncedPrice": 38760,
-      "updatedAt": "2026-04-28T11:39:24.306Z"
+      "updatedAt": "2026-04-28T13:17:43.721Z"
     },
     "2000002181989": {
       "itemId": "MCO1864089439",
@@ -4087,14 +4094,14 @@
       "shopifyVariantId": 45718289776813,
       "shopifyProductId": 8492319309997,
       "lastSyncedPrice": 22800,
-      "updatedAt": "2026-04-28T11:39:26.366Z"
+      "updatedAt": "2026-04-28T13:17:45.138Z"
     },
     "2000002181934": {
       "itemId": "MCO1891480127",
       "shopifyVariantId": 45718289809581,
       "shopifyProductId": 8492319309997,
       "lastSyncedPrice": 51300,
-      "updatedAt": "2026-04-28T11:39:27.226Z"
+      "updatedAt": "2026-04-28T13:17:45.855Z"
     },
     "2000002186717": {
       "itemId": "MCO1864128075",
@@ -4122,28 +4129,28 @@
       "shopifyVariantId": 45718289154221,
       "shopifyProductId": 8492318818477,
       "lastSyncedPrice": 57000,
-      "updatedAt": "2026-04-28T11:39:29.983Z"
+      "updatedAt": "2026-04-28T13:17:47.772Z"
     },
     "2000002186724": {
       "itemId": "MCO3854789762",
       "shopifyVariantId": 45718288859309,
       "shopifyProductId": 8492318687405,
       "lastSyncedPrice": 19380,
-      "updatedAt": "2026-04-28T11:39:30.814Z"
+      "updatedAt": "2026-04-28T13:17:48.461Z"
     },
     "2000002144540": {
       "itemId": "MCO1863826417",
       "shopifyVariantId": 45718313074861,
       "shopifyProductId": 8492327403693,
       "lastSyncedPrice": 22800,
-      "updatedAt": "2026-04-28T11:39:32.099Z"
+      "updatedAt": "2026-04-28T13:17:49.446Z"
     },
     "2000002144427": {
       "itemId": "MCO3748566980",
       "shopifyVariantId": 45718313107629,
       "shopifyProductId": 8492327403693,
       "lastSyncedPrice": 38760,
-      "updatedAt": "2026-04-28T11:39:32.938Z"
+      "updatedAt": "2026-04-28T13:17:50.139Z"
     },
     "2000002144397": {
       "itemId": "MCO3854722238",
@@ -4157,14 +4164,14 @@
       "shopifyVariantId": 45718288990381,
       "shopifyProductId": 8492318752941,
       "lastSyncedPrice": 19380,
-      "updatedAt": "2026-04-28T11:39:36.953Z"
+      "updatedAt": "2026-04-28T13:17:52.942Z"
     },
     "2000002186694": {
       "itemId": "MCO3748541802",
       "shopifyVariantId": 45718289023149,
       "shopifyProductId": 8492318752941,
       "lastSyncedPrice": 57000,
-      "updatedAt": "2026-04-28T11:39:37.769Z"
+      "updatedAt": "2026-04-28T13:17:53.643Z"
     },
     "2000002186731": {
       "itemId": "MCO1863967039",
@@ -4206,14 +4213,14 @@
       "shopifyVariantId": 45718304293037,
       "shopifyProductId": 8492323537069,
       "lastSyncedPrice": 22800,
-      "updatedAt": "2026-04-28T11:39:41.690Z"
+      "updatedAt": "2026-04-28T13:17:56.125Z"
     },
     "2000002164791": {
       "itemId": "MCO1863220797",
       "shopifyVariantId": 45718304325805,
       "shopifyProductId": 8492323537069,
       "lastSyncedPrice": 38760,
-      "updatedAt": "2026-04-28T11:39:42.532Z"
+      "updatedAt": "2026-04-28T13:17:56.821Z"
     },
     "2000002182009": {
       "itemId": "MCO3750608568",
@@ -4227,7 +4234,7 @@
       "shopifyVariantId": 45718289940653,
       "shopifyProductId": 8492319375533,
       "lastSyncedPrice": 51300,
-      "updatedAt": "2026-04-28T11:39:43.985Z"
+      "updatedAt": "2026-04-28T13:17:57.864Z"
     },
     "2000001106938": {
       "itemId": "MCO2548926458",
@@ -4241,28 +4248,28 @@
       "shopifyVariantId": 45718313435309,
       "shopifyProductId": 8492327534765,
       "lastSyncedPrice": 22800,
-      "updatedAt": "2026-04-28T11:39:45.412Z"
+      "updatedAt": "2026-04-28T13:17:58.905Z"
     },
     "2000001107171": {
       "itemId": "MCO1454509205",
       "shopifyVariantId": 45718313468077,
       "shopifyProductId": 8492327534765,
       "lastSyncedPrice": 38760,
-      "updatedAt": "2026-04-28T11:39:46.248Z"
+      "updatedAt": "2026-04-28T13:17:59.631Z"
     },
     "2000002158790": {
       "itemId": "MCO3895063506",
       "shopifyVariantId": 45718309077165,
       "shopifyProductId": 8492325863597,
       "lastSyncedPrice": 16986,
-      "updatedAt": "2026-04-28T11:39:47.713Z"
+      "updatedAt": "2026-04-28T13:18:00.765Z"
     },
     "2000002158783": {
       "itemId": "MCO3897905440",
       "shopifyVariantId": 45718309109933,
       "shopifyProductId": 8492325863597,
       "lastSyncedPrice": 44346,
-      "updatedAt": "2026-04-28T11:39:48.531Z"
+      "updatedAt": "2026-04-28T13:18:01.508Z"
     },
     "2000001796252": {
       "itemId": "MCO3750062238",
@@ -4395,21 +4402,21 @@
       "shopifyVariantId": 45718292988077,
       "shopifyProductId": 8492320456877,
       "lastSyncedPrice": 171000,
-      "updatedAt": "2026-04-28T11:38:41.580Z"
+      "updatedAt": "2026-04-28T13:17:14.137Z"
     },
     "2000002152101": {
       "itemId": "MCO3894948200",
       "shopifyVariantId": 45718293020845,
       "shopifyProductId": 8492320456877,
       "lastSyncedPrice": 225720,
-      "updatedAt": "2026-04-28T11:38:42.368Z"
+      "updatedAt": "2026-04-28T13:17:14.878Z"
     },
     "2000002152118": {
       "itemId": "MCO3897866340",
       "shopifyVariantId": 45718293053613,
       "shopifyProductId": 8492320456877,
       "lastSyncedPrice": 245100,
-      "updatedAt": "2026-04-28T11:38:43.226Z"
+      "updatedAt": "2026-04-28T13:17:15.575Z"
     },
     "2000002152200": {
       "itemId": "MCO1863986901",
@@ -4437,7 +4444,7 @@
       "shopifyVariantId": 45718317891757,
       "shopifyProductId": 8492329631917,
       "lastSyncedPrice": 41040,
-      "updatedAt": "2026-04-28T11:38:55.177Z"
+      "updatedAt": "2026-04-28T13:17:23.712Z"
     },
     "2000002171409": {
       "itemId": "MCO3854722142",
@@ -4458,7 +4465,7 @@
       "shopifyVariantId": 45718311141549,
       "shopifyProductId": 8492326781101,
       "lastSyncedPrice": 39900,
-      "updatedAt": "2026-04-28T11:39:08.289Z"
+      "updatedAt": "2026-04-28T13:17:33.401Z"
     },
     "2000002147633": {
       "itemId": "MCO2667564826",
@@ -4535,7 +4542,7 @@
       "shopifyVariantId": 45718313762989,
       "shopifyProductId": 8492327633069,
       "lastSyncedPrice": 57000,
-      "updatedAt": "2026-04-28T11:39:36.105Z"
+      "updatedAt": "2026-04-28T13:17:52.252Z"
     },
     "2000021948440": {
       "itemId": "MCO1865006469",
@@ -4584,21 +4591,21 @@
       "shopifyVariantId": 45827217031341,
       "shopifyProductId": 8527260483757,
       "lastSyncedPrice": 136800,
-      "updatedAt": "2026-04-28T11:34:47.370Z"
+      "updatedAt": "2026-04-28T13:14:32.321Z"
     },
     "2000002192589": {
       "itemId": "MCO3809153476",
       "shopifyVariantId": 45827216048301,
       "shopifyProductId": 8527260090541,
       "lastSyncedPrice": 114000,
-      "updatedAt": "2026-04-28T11:34:48.216Z"
+      "updatedAt": "2026-04-28T13:14:33.047Z"
     },
     "2000002192596": {
       "itemId": "MCO3829256510",
       "shopifyVariantId": 45827216081069,
       "shopifyProductId": 8527260090541,
       "lastSyncedPrice": 119700,
-      "updatedAt": "2026-04-28T11:34:49.056Z"
+      "updatedAt": "2026-04-28T13:14:33.747Z"
     },
     "2000002192602": {
       "itemId": "MCO3806099006",
@@ -4626,14 +4633,14 @@
       "shopifyVariantId": 45827216212141,
       "shopifyProductId": 8527260123309,
       "lastSyncedPrice": 114000,
-      "updatedAt": "2026-04-28T11:34:57.453Z"
+      "updatedAt": "2026-04-28T13:14:39.387Z"
     },
     "2000002192541": {
       "itemId": "MCO3801975734",
       "shopifyVariantId": 45827216244909,
       "shopifyProductId": 8527260123309,
       "lastSyncedPrice": 119700,
-      "updatedAt": "2026-04-28T11:34:58.271Z"
+      "updatedAt": "2026-04-28T13:14:40.042Z"
     },
     "2000002192558": {
       "itemId": "MCO1905875671",
@@ -4668,7 +4675,7 @@
       "shopifyVariantId": 45827216900269,
       "shopifyProductId": 8527260450989,
       "lastSyncedPrice": 119700,
-      "updatedAt": "2026-04-28T11:35:08.869Z"
+      "updatedAt": "2026-04-28T13:14:47.396Z"
     },
     "2000002189442": {
       "itemId": "MCO1891192169",
@@ -4703,14 +4710,14 @@
       "shopifyVariantId": 45827216408749,
       "shopifyProductId": 8527260156077,
       "lastSyncedPrice": 119700,
-      "updatedAt": "2026-04-28T11:35:21.188Z"
+      "updatedAt": "2026-04-28T13:14:55.789Z"
     },
     "2000002192503": {
       "itemId": "MCO3864064532",
       "shopifyVariantId": 45827216441517,
       "shopifyProductId": 8527260156077,
       "lastSyncedPrice": 125400,
-      "updatedAt": "2026-04-28T11:35:21.996Z"
+      "updatedAt": "2026-04-28T13:14:56.549Z"
     },
     "2000002192510": {
       "itemId": "MCO3875119438",
@@ -4731,7 +4738,7 @@
       "shopifyVariantId": 45827215425709,
       "shopifyProductId": 8527259730093,
       "lastSyncedPrice": 114000,
-      "updatedAt": "2026-04-28T11:37:16.086Z"
+      "updatedAt": "2026-04-28T13:16:12.478Z"
     },
     "2000002192053": {
       "itemId": "MCO3856469012",
@@ -4745,7 +4752,7 @@
       "shopifyVariantId": 45827215491245,
       "shopifyProductId": 8527259730093,
       "lastSyncedPrice": 142500,
-      "updatedAt": "2026-04-28T11:37:19.214Z"
+      "updatedAt": "2026-04-28T13:16:14.841Z"
     },
     "2000002192077": {
       "itemId": "MCO3856480740",
@@ -4766,14 +4773,14 @@
       "shopifyVariantId": 45827215229101,
       "shopifyProductId": 8527259664557,
       "lastSyncedPrice": 114000,
-      "updatedAt": "2026-04-28T11:37:27.784Z"
+      "updatedAt": "2026-04-28T13:16:20.884Z"
     },
     "2000002191650": {
       "itemId": "MCO3805944130",
       "shopifyVariantId": 45827215261869,
       "shopifyProductId": 8527259664557,
       "lastSyncedPrice": 125400,
-      "updatedAt": "2026-04-28T11:37:28.656Z"
+      "updatedAt": "2026-04-28T13:16:21.743Z"
     },
     "2000002191667": {
       "itemId": "MCO1886628099",
@@ -4808,7 +4815,7 @@
       "shopifyVariantId": 45827216769197,
       "shopifyProductId": 8527260385453,
       "lastSyncedPrice": 148200,
-      "updatedAt": "2026-04-28T11:38:16.431Z"
+      "updatedAt": "2026-04-28T13:16:54.697Z"
     },
     "2000002187073": {
       "itemId": "MCO1866584755",
@@ -4829,7 +4836,7 @@
       "shopifyVariantId": 45827216605357,
       "shopifyProductId": 8527260254381,
       "lastSyncedPrice": 39900,
-      "updatedAt": "2026-04-28T11:38:52.145Z"
+      "updatedAt": "2026-04-28T13:17:21.409Z"
     },
     "2000002190998": {
       "itemId": "MCO3854778658",
@@ -4864,42 +4871,42 @@
       "shopifyVariantId": 45838985232557,
       "shopifyProductId": 8532993081517,
       "lastSyncedPrice": 182400,
-      "updatedAt": "2026-04-28T11:32:54.158Z"
+      "updatedAt": "2026-04-28T13:13:15.660Z"
     },
     "2000002192145": {
       "itemId": "MCO1884896493",
       "shopifyVariantId": 45838986084525,
       "shopifyProductId": 8532993179821,
       "lastSyncedPrice": 114000,
-      "updatedAt": "2026-04-28T11:37:46.683Z"
+      "updatedAt": "2026-04-28T13:16:33.665Z"
     },
     "2000002192152": {
       "itemId": "MCO1892886883",
       "shopifyVariantId": 45838986117293,
       "shopifyProductId": 8532993179821,
       "lastSyncedPrice": 125400,
-      "updatedAt": "2026-04-28T11:37:47.477Z"
+      "updatedAt": "2026-04-28T13:16:34.353Z"
     },
     "2000002192169": {
       "itemId": "MCO3897892344",
       "shopifyVariantId": 45838986150061,
       "shopifyProductId": 8532993179821,
       "lastSyncedPrice": 142500,
-      "updatedAt": "2026-04-28T11:37:48.352Z"
+      "updatedAt": "2026-04-28T13:16:35.054Z"
     },
     "2000002192176": {
       "itemId": "MCO3780417414",
       "shopifyVariantId": 45838986182829,
       "shopifyProductId": 8532993179821,
       "lastSyncedPrice": 153900,
-      "updatedAt": "2026-04-28T11:37:49.300Z"
+      "updatedAt": "2026-04-28T13:16:35.765Z"
     },
     "2000002192183": {
       "itemId": "MCO3895068498",
       "shopifyVariantId": 45838986215597,
       "shopifyProductId": 8532993179821,
       "lastSyncedPrice": 171000,
-      "updatedAt": "2026-04-28T11:37:50.124Z"
+      "updatedAt": "2026-04-28T13:16:36.514Z"
     },
     "2000002191445": {
       "itemId": "MCO3859864322",
@@ -4976,35 +4983,35 @@
       "shopifyVariantId": 45838985265325,
       "shopifyProductId": 8532993147053,
       "lastSyncedPrice": 114000,
-      "updatedAt": "2026-04-28T11:38:02.219Z"
+      "updatedAt": "2026-04-28T13:16:45.091Z"
     },
     "2000002191506": {
       "itemId": "MCO3855887452",
       "shopifyVariantId": 45838985298093,
       "shopifyProductId": 8532993147053,
       "lastSyncedPrice": 125400,
-      "updatedAt": "2026-04-28T11:38:03.044Z"
+      "updatedAt": "2026-04-28T13:16:45.800Z"
     },
     "2000002191513": {
       "itemId": "MCO3897866310",
       "shopifyVariantId": 45838985330861,
       "shopifyProductId": 8532993147053,
       "lastSyncedPrice": 142500,
-      "updatedAt": "2026-04-28T11:38:03.851Z"
+      "updatedAt": "2026-04-28T13:16:46.521Z"
     },
     "2000002191520": {
       "itemId": "MCO3895063440",
       "shopifyVariantId": 45838985363629,
       "shopifyProductId": 8532993147053,
       "lastSyncedPrice": 153900,
-      "updatedAt": "2026-04-28T11:38:04.725Z"
+      "updatedAt": "2026-04-28T13:16:47.242Z"
     },
     "2000002191537": {
       "itemId": "MCO3806061398",
       "shopifyVariantId": 45838985396397,
       "shopifyProductId": 8532993147053,
       "lastSyncedPrice": 171000,
-      "updatedAt": "2026-04-28T11:38:05.575Z"
+      "updatedAt": "2026-04-28T13:16:47.942Z"
     },
     "12345678910": {
       "itemId": "MCO3800291460",
